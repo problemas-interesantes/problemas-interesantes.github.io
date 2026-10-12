@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problemas Interesantes</title>
+<meta name="description" content="Una colección de problemas de matemática resueltos: ideas ingeniosas, no matemática sofisticada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<style>
+  :root {
+    --bg: #fbf9f5;
+    --card: #ffffff;
+    --ink: #1f2328;
+    --muted: #5f6670;
+    --line: #e6e1d8;
+    --accent: #2f6f5e;
+    --accent-soft: #e7f1ed;
+    --tag: #f3efe7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15181c;
+      --card: #1d2126;
+      --ink: #e8e6e1;
+      --muted: #a2a8b0;
+      --line: #2e343b;
+      --accent: #7cc4ad;
+      --accent-soft: #1f2e2a;
+      --tag: #262b31;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 19px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 64px 0 32px; border-bottom: 1px solid var(--line); }
+  .kicker {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 13px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 12px;
+  }
+  h1 { font-size: 46px; line-height: 1.1; margin: 0 0 16px; font-weight: 600; }
+  .lead { font-size: 21px; color: var(--muted); margin: 0; max-width: 600px; }
+
+  nav {
+    font-family: Inter, system-ui, sans-serif; font-size: 15px;
+    display: flex; gap: 22px; flex-wrap: wrap; padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+
+  section { padding: 40px 0 8px; }
+  h2 {
+    font-family: Inter, system-ui, sans-serif;
+    font-size: 14px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 20px;
+  }
+
+  .problem {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 24px 26px; margin-bottom: 22px;
+  }
+  .problem-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .num {
+    font-family: Inter, system-ui, sans-serif; font-weight: 600;
+    font-size: 14px; color: var(--accent);
+  }
+  .problem h3 { margin: 0; font-size: 23px; font-weight: 600; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 12px; }
+  .tag {
+    font-family: Inter, system-ui, sans-serif; font-size: 12px;
+    background: var(--tag); color: var(--muted);
+    padding: 3px 9px; border-radius: 999px;
+  }
+  .problem p { margin: 0 0 12px; }
+
+  details { margin-top: 14px; border-top: 1px dashed var(--line); padding-top: 12px; }
+  summary {
+    cursor: pointer; list-style: none;
+    font-family: Inter, system-ui, sans-serif; font-size: 15px; font-weight: 500;
+    color: var(--accent); display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px; border-radius: 8px; background: var(--accent-soft);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▸"; transition: transform .15s; }
+  details[open] summary::before { transform: rotate(90deg); }
+  details.hint summary { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+  .answer { padding: 14px 2px 2px; }
+  .answer p:last-child { margin-bottom: 0; }
+
+  .about p, .contact p { margin: 0 0 14px; }
+  .contact a { color: var(--accent); }
+
+  footer {
+    margin-top: 48px; padding: 28px 0 48px; border-top: 1px solid var(--line);
+    font-family: Inter, system-ui, sans-serif; font-size: 14px; color: var(--muted);
+  }
+
+  @media (max-width: 560px) {
+    body { font-size: 18px; }
+    header { padding-top: 40px; }
+    h1 { font-size: 36px; }
+    .lead { font-size: 19px; }
+    .problem { padding: 20px 18px; }
+    .problem h3 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="kicker">Problemas Interesantes</p>
+    <h1>Ideas ingeniosas,<br>no matemática sofisticada</h1>
+    <p class="lead">Una colección de problemas de matemática resueltos, elegidos porque la solución esconde una idea que vale la pena conocer.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav>
+    <a href="#problemas">Problemas</a>
+    <a href="#acerca">Acerca del sitio</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="problemas">
+    <h2>Problemas</h2>
+
+    <article class="problem" id="p1">
+      <div class="problem-head">
+        <span class="num">N.º 1</span>
+        <h3>El tablero mutilado</h3>
+      </div>
+      <div class="tags"><span class="tag">Combinatoria</span><span class="tag">Invariantes</span></div>
+      <p>A un tablero de ajedrez de \(8\times 8\) se le quitan dos casillas en esquinas opuestas. ¿Se pueden cubrir las \(62\) casillas restantes con \(31\) fichas de dominó, cada una de las cuales cubre exactamente dos casillas adyacentes?</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Pensá en los colores del tablero.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>No se puede. Cada ficha de dominó cubre siempre una casilla blanca y una negra, así que \(31\) fichas cubren \(31\) blancas y \(31\) negras.</p>
+          <p>Pero las dos esquinas opuestas tienen el mismo color, de modo que al quitarlas quedan \(32\) casillas de un color y \(30\) del otro. La cuenta no cierra.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p2">
+      <div class="problem-head">
+        <span class="num">N.º 2</span>
+        <h3>Cinco puntos en un cuadrado</h3>
+      </div>
+      <div class="tags"><span class="tag">Geometría</span><span class="tag">Principio del palomar</span></div>
+      <p>Se eligen cinco puntos cualesquiera dentro de un cuadrado de lado \(1\). Probar que hay dos de ellos a distancia menor o igual que \(\dfrac{\sqrt{2}}{2}\).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Dividí el cuadrado en cuatro partes iguales.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Dividimos el cuadrado en cuatro cuadraditos de lado \(\tfrac12\). Hay cinco puntos y cuatro cuadraditos, así que dos puntos caen en el mismo cuadradito.</p>
+          <p>La mayor distancia posible entre dos puntos de un cuadradito de lado \(\tfrac12\) es su diagonal, \(\tfrac12\sqrt{2} = \tfrac{\sqrt2}{2}\). Esos dos puntos están, entonces, a distancia a lo sumo \(\tfrac{\sqrt2}{2}\).</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p3">
+      <div class="problem-head">
+        <span class="num">N.º 3</span>
+        <h3>Irracional elevado a irracional</h3>
+      </div>
+      <div class="tags"><span class="tag">Números reales</span><span class="tag">Demostración no constructiva</span></div>
+      <p>¿Existen números irracionales \(a\) y \(b\) tales que \(a^b\) sea racional?</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Considerá \(\sqrt2^{\sqrt2}\). No hace falta saber si es racional o no.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Sí. Miremos el número \(x = \sqrt2^{\sqrt2}\).</p>
+          <p>Si \(x\) es racional, ya está: tomamos \(a = b = \sqrt2\).</p>
+          <p>Si \(x\) es irracional, tomamos \(a = x\) y \(b = \sqrt2\). Entonces
+          \[ a^b = \left(\sqrt2^{\sqrt2}\right)^{\sqrt2} = \sqrt2^{\,2} = 2, \]
+          que es racional.</p>
+          <p>En cualquiera de los dos casos existen tales \(a\) y \(b\), aunque el argumento no nos dice cuál de los dos casos es el verdadero.</p>
+        </div>
+      </details>
+    </article>
+  </section>
+
+  <section id="acerca" class="about">
+    <h2>Acerca del sitio</h2>
+    <p>Este sitio reúne problemas cuya gracia no está en la técnica sino en la idea: un cambio de punto de vista, un invariante, un argumento inesperado. Muchos se pueden resolver con matemática de secundaria, pero piden pensar de una manera distinta.</p>
+    <p>Cada problema tiene una pista y una solución escondidas, para que puedas intentarlo antes de mirar.</p>
+  </section>
+
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <p>¿Tenés una pregunta sobre algún problema, encontraste un error o querés proponer uno? Escribí a <a href="mailto:problemasinteresantes@gmail.com">problemasinteresantes@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    Problemas Interesantes · problemas-interesantes.github.io
+  </footer>
+</div>
+
+</body>
+</html>
