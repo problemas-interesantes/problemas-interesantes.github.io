@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
   window.MathJax = {
-    tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
     options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
   };
 </script>
@@ -24,6 +24,7 @@
     --accent: #2f6f5e;
     --accent-soft: #e7f1ed;
     --tag: #f3efe7;
+    --star: #b8860b;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -35,6 +36,7 @@
       --accent: #7cc4ad;
       --accent-soft: #1f2e2a;
       --tag: #262b31;
+      --star: #e0b84a;
     }
   }
   * { box-sizing: border-box; }
@@ -73,15 +75,39 @@
     text-transform: uppercase; color: var(--muted); margin: 0 0 20px;
   }
 
+  /* Índice y filtro */
+  .filtro { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 16px; }
+  .filtro button {
+    font-family: Inter, system-ui, sans-serif; font-size: 13px;
+    background: var(--tag); color: var(--muted); border: 1px solid transparent;
+    padding: 4px 11px; border-radius: 999px; cursor: pointer;
+  }
+  .filtro button:hover { color: var(--accent); }
+  .filtro button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+  .indice {
+    list-style: none; padding: 0; margin: 0 0 8px;
+    font-family: Inter, system-ui, sans-serif; font-size: 15px;
+    columns: 2; column-gap: 28px;
+  }
+  .indice li { break-inside: avoid; padding: 3px 0; }
+  .indice a { color: var(--ink); text-decoration: none; display: flex; gap: 2px; }
+  .indice .t { flex: 1; }
+  .indice a:hover { color: var(--accent); }
+  .indice .n { color: var(--accent); font-weight: 600; display: inline-block; min-width: 2.2em; }
+  .indice .dif { font-size: 12px; margin-left: 4px; }
+  .leyenda { font-family: Inter, system-ui, sans-serif; font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+
   .problem {
     background: var(--card); border: 1px solid var(--line);
     border-radius: 12px; padding: 24px 26px; margin-bottom: 22px;
+    overflow-x: auto;
   }
   .problem-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
   .num {
     font-family: Inter, system-ui, sans-serif; font-weight: 600;
     font-size: 14px; color: var(--accent);
   }
+  .dif { color: var(--star); font-size: 15px; letter-spacing: .05em; }
   .problem h3 { margin: 0; font-size: 23px; font-weight: 600; }
   .tags { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 12px; }
   .tag {
@@ -101,9 +127,10 @@
   summary::-webkit-details-marker { display: none; }
   summary::before { content: "▸"; transition: transform .15s; }
   details[open] summary::before { transform: rotate(90deg); }
-  details.hint summary { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+  details.hint summary, details.mas summary { background: transparent; border: 1px solid var(--line); color: var(--muted); }
   .answer { padding: 14px 2px 2px; }
   .answer p:last-child { margin-bottom: 0; }
+  .answer details { margin-top: 8px; }
 
   .about p, .contact p { margin: 0 0 14px; }
   .contact a { color: var(--accent); }
@@ -120,6 +147,7 @@
     .lead { font-size: 19px; }
     .problem { padding: 20px 18px; }
     .problem h3 { font-size: 21px; }
+    .indice { columns: 1; }
   }
 </style>
 </head>
@@ -135,18 +163,28 @@
 
 <div class="wrap">
   <nav>
+    <a href="#indice">Índice</a>
     <a href="#problemas">Problemas</a>
     <a href="#acerca">Acerca del sitio</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
+  <section id="indice">
+    <h2>Índice</h2>
+    <div class="filtro" id="filtro" aria-label="Filtrar por tema"></div>
+    <p class="leyenda">Dificultad: <span class="dif">★</span> accesible · <span class="dif">★★</span> pide una idea · <span class="dif">★★★</span> difícil</p>
+    <ol class="indice" id="lista-indice"></ol>
+  </section>
+
   <section id="problemas">
     <h2>Problemas</h2>
 
+    <!-- ===================== 1 ===================== -->
     <article class="problem" id="p1">
       <div class="problem-head">
         <span class="num">N.º 1</span>
         <h3>El tablero mutilado</h3>
+        <span class="dif" title="Dificultad">★</span>
       </div>
       <div class="tags"><span class="tag">Combinatoria</span><span class="tag">Invariantes</span></div>
       <p>A un tablero de ajedrez de \(8\times 8\) se le quitan dos casillas en esquinas opuestas. ¿Se pueden cubrir las \(62\) casillas restantes con \(31\) fichas de dominó, cada una de las cuales cubre exactamente dos casillas adyacentes?</p>
@@ -163,10 +201,12 @@
       </details>
     </article>
 
+    <!-- ===================== 2 ===================== -->
     <article class="problem" id="p2">
       <div class="problem-head">
         <span class="num">N.º 2</span>
         <h3>Cinco puntos en un cuadrado</h3>
+        <span class="dif" title="Dificultad">★</span>
       </div>
       <div class="tags"><span class="tag">Geometría</span><span class="tag">Principio del palomar</span></div>
       <p>Se eligen cinco puntos cualesquiera dentro de un cuadrado de lado \(1\). Probar que hay dos de ellos a distancia menor o igual que \(\dfrac{\sqrt{2}}{2}\).</p>
@@ -183,10 +223,12 @@
       </details>
     </article>
 
+    <!-- ===================== 3 ===================== -->
     <article class="problem" id="p3">
       <div class="problem-head">
         <span class="num">N.º 3</span>
         <h3>Irracional elevado a irracional</h3>
+        <span class="dif" title="Dificultad">★</span>
       </div>
       <div class="tags"><span class="tag">Números reales</span><span class="tag">Demostración no constructiva</span></div>
       <p>¿Existen números irracionales \(a\) y \(b\) tales que \(a^b\) sea racional?</p>
@@ -207,10 +249,12 @@
       </details>
     </article>
 
+    <!-- ===================== 4 ===================== -->
     <article class="problem" id="p4">
       <div class="problem-head">
         <span class="num">N.º 4</span>
         <h3>La integral de un polinomio y sus coeficientes</h3>
+        <span class="dif" title="Dificultad">★★</span>
       </div>
       <div class="tags"><span class="tag">Desigualdades</span><span class="tag">Cauchy–Schwarz</span></div>
       <p>Sea \(p(t)=a_0+a_1t+\dots+a_nt^n\) un polinomio de coeficientes reales. Probar que
@@ -227,17 +271,30 @@
           \[ |p(t)| \le \Big(\sum_k a_k^2\Big)^{1/2}\Big(\sum_{k=0}^n t^{2k}\Big)^{1/2}
              \le \|a\|\Big(\sum_{k\ge0} t^{2k}\Big)^{1/2} = \frac{\|a\|}{\sqrt{1-t^2}}. \]
           Integrando, \(\displaystyle\int_0^1 |p| \le \|a\|\int_0^1\frac{dt}{\sqrt{1-t^2}} = \frac{\pi}{2}\|a\|.\)</p>
-          <p><strong>Generalizaciones.</strong> El mismo argumento vale para series \(\sum a_kt^k\) con \(\sum a_k^2&lt;\infty\). Con Hölder en lugar de Cauchy–Schwarz: si \(\tfrac1p+\tfrac1q=1\), \(1&lt;q&lt;\infty\),
-          \[ \int_0^1 |p(t)|\,dt \le \|a\|_p\int_0^1 (1-t^q)^{-1/q}\,dt = \|a\|_p\,\frac{\pi/q}{\sin(\pi/q)}, \]
-          usando \(u=t^q\) y la función Beta. Para \(q=2\) se recupera \(\pi/2\).</p>
+          <p><strong>Generalización.</strong> El mismo argumento vale para series \(\sum a_kt^k\) con \(\sum a_k^2&lt;\infty\).</p>
+          <p><em>Para seguir pensando:</em> ¿qué cota se obtiene usando la desigualdad de Hölder en lugar de Cauchy–Schwarz, con \(\|a\|_p=\big(\sum|a_k|^p\big)^{1/p}\)?</p>
+          <details class="hint">
+            <summary>Pista</summary>
+            <div class="answer"><p>Con \(\tfrac1p+\tfrac1q=1\), acotá \(\sum t^{qk}\) por la serie geométrica y, en la integral que queda, hacé el cambio \(u=t^q\): aparece la función Beta.</p></div>
+          </details>
+          <details class="mas">
+            <summary>Respuesta</summary>
+            <div class="answer">
+              <p>Para \(1&lt;q&lt;\infty\),
+              \[ \int_0^1 |p(t)|\,dt \le \|a\|_p\int_0^1 (1-t^q)^{-1/q}\,dt = \|a\|_p\,\frac{\pi/q}{\sin(\pi/q)}. \]
+              Para \(q=2\) se recupera \(\pi/2\).</p>
+            </div>
+          </details>
         </div>
       </details>
     </article>
 
+    <!-- ===================== 5 ===================== -->
     <article class="problem" id="p5">
       <div class="problem-head">
         <span class="num">N.º 5</span>
         <h3>Acotando \(e\)</h3>
+        <span class="dif" title="Dificultad">★★</span>
       </div>
       <div class="tags"><span class="tag">Desigualdades</span><span class="tag">Análisis</span></div>
       <p>Hallar el máximo valor de \(\alpha\) y el mínimo valor de \(\beta\) tales que
@@ -259,10 +316,12 @@
       </details>
     </article>
 
+    <!-- ===================== 6 ===================== -->
     <article class="problem" id="p6">
       <div class="problem-head">
         <span class="num">N.º 6</span>
         <h3>El triángulo inscripto de perímetro mínimo</h3>
+        <span class="dif" title="Dificultad">★★</span>
       </div>
       <div class="tags"><span class="tag">Geometría</span><span class="tag">Reflexiones</span></div>
       <p>Dado un triángulo acutángulo, hallar el triángulo de perímetro mínimo inscripto en él, con un vértice en cada lado.</p>
@@ -280,10 +339,12 @@
       </details>
     </article>
 
+    <!-- ===================== 7 ===================== -->
     <article class="problem" id="p7">
       <div class="problem-head">
         <span class="num">N.º 7</span>
         <h3>Un polinomio con todas sus raíces positivas</h3>
+        <span class="dif" title="Dificultad">★</span>
       </div>
       <div class="tags"><span class="tag">Polinomios</span><span class="tag">Desigualdad de las medias</span></div>
       <p>Se sabe que el polinomio
@@ -301,12 +362,14 @@
       </details>
     </article>
 
+    <!-- ===================== 8 ===================== -->
     <article class="problem" id="p8">
       <div class="problem-head">
         <span class="num">N.º 8</span>
         <h3>Inyectivo en los racionales, no en los reales</h3>
+        <span class="dif" title="Dificultad">★★</span>
       </div>
-      <div class="tags"><span class="tag">Polinomios</span><span class="tag">Aritmética</span></div>
+      <div class="tags"><span class="tag">Polinomios</span><span class="tag">Teoría de números</span></div>
       <p>Construir un polinomio \(\mathbb R\to\mathbb R\) cuya restricción a los racionales sea inyectiva, pero que no sea inyectivo en los reales.</p>
       <details class="hint">
         <summary>Pista</summary>
@@ -321,41 +384,62 @@
       </details>
     </article>
 
+    <!-- ===================== 9 ===================== -->
     <article class="problem" id="p9">
       <div class="problem-head">
         <span class="num">N.º 9</span>
         <h3>Divisibilidad de polinomios</h3>
+        <span class="dif" title="Dificultad">★★</span>
       </div>
       <div class="tags"><span class="tag">Polinomios</span><span class="tag">Raíces de la unidad</span></div>
-      <p>a) Demostrar que \(\dfrac{x^m-1}{x-1}\) es divisible por \(\dfrac{x^n-1}{x-1}\) si y solo si \(n\mid m\).</p>
-      <p>b) Sean \(a_1,\dots,a_n\) enteros mayores que \(1\), coprimos dos a dos. Probar que \(\dfrac{x^{a_1a_2\cdots a_n}-1}{x-1}\,(x-1)^n\) es divisible por \((x^{a_1}-1)(x^{a_2}-1)\cdots(x^{a_n}-1)\).</p>
-      <p>c) Probar que \(x^{4n}+x^{3n}+x^{2n}+x^n+1\) es divisible por \(x^4+x^3+x^2+x+1\) si y solo si \(5\nmid n\).</p>
-      <p>d) Probar que \(1+x^n+x^{2n}+\dots+x^{(m-1)n}\) es divisible por \(1+x+\dots+x^{m-1}\) si y solo si \(\gcd(m,n)=1\).</p>
-      <p>e) Demostrar que, para \(0\le n\le m\),
-      \[ \frac{(x^m-1)(x^{m-1}-1)\cdots(x^{m-n+1}-1)}{(x^n-1)(x^{n-1}-1)\cdots(x-1)} \]
-      es un polinomio con coeficientes enteros (Gauss).</p>
+      <p>Probar que
+      \[ 1+x^n+x^{2n}+\dots+x^{(m-1)n} \]
+      es divisible por \(1+x+\dots+x^{m-1}\) si y solo si \(\gcd(m,n)=1\).</p>
       <details class="hint">
         <summary>Pista</summary>
-        <div class="answer"><p>Una sola herramienta resuelve todo: \(x^m-1=\prod_{d\mid m}\Phi_d(x)\), donde los polinomios ciclotómicos \(\Phi_d\) son mónicos, de coeficientes enteros, irreducibles y distintos entre sí. Para c) y d) alcanza con evaluar en raíces de la unidad.</p></div>
+        <div class="answer"><p>¿Cuáles son las raíces de \(1+x+\dots+x^{m-1}\)? Evaluá el otro polinomio en ellas.</p></div>
       </details>
       <details>
         <summary>Ver solución</summary>
         <div class="answer">
-          <p>Como los \(\Phi_d\) son irreducibles y distintos, la divisibilidad entre productos de ciclotómicos se decide comparando la multiplicidad de cada \(\Phi_d\). Entre polinomios mónicos de coeficientes enteros, el cociente exacto tiene coeficientes enteros.</p>
-          <p><strong>a)</strong> \(\dfrac{x^m-1}{x-1}=\prod_{d\mid m,\,d&gt;1}\Phi_d\). Es divisible por \(\prod_{d\mid n,\,d&gt;1}\Phi_d\) si y solo si todo divisor \(d&gt;1\) de \(n\) divide a \(m\), lo que (tomando \(d=n\)) equivale a \(n\mid m\).</p>
-          <p><strong>b)</strong> Sea \(N=a_1\cdots a_n\). El dividendo es \((x^N-1)(x-1)^{n-1}=\Phi_1^{\,n}\prod_{d\mid N,\,d&gt;1}\Phi_d\), y el divisor es \(\Phi_1^{\,n}\prod_i\prod_{d\mid a_i,\,d&gt;1}\Phi_d\). Por la coprimalidad, los conjuntos \(\{d&gt;1: d\mid a_i\}\) son disjuntos y están contenidos en los divisores de \(N\).</p>
-          <p><strong>d)</strong> Sean \(A(x)=\dfrac{x^{mn}-1}{x^n-1}\) y \(B(x)=\dfrac{x^m-1}{x-1}\). Las raíces de \(B\) son simples: las raíces \(m\)-ésimas de la unidad \(\zeta\neq1\). Si \(\zeta^n\ne1\), \(A(\zeta)=\dfrac{\zeta^{mn}-1}{\zeta^n-1}=0\); si \(\zeta^n=1\), \(A(\zeta)=m\neq0\). Existe \(\zeta\neq1\) con \(\zeta^m=\zeta^n=1\) si y solo si \(\gcd(m,n)&gt;1\).</p>
-          <p><strong>c)</strong> Es el caso \(m=5\) de d).</p>
-          <p><strong>e)</strong> La multiplicidad de \(\Phi_d\) en el numerador es la cantidad de múltiplos de \(d\) en \((m-n,m]\), es decir \(\lfloor m/d\rfloor-\lfloor (m-n)/d\rfloor\); en el denominador es \(\lfloor n/d\rfloor\). Como \(\lfloor a+b\rfloor\ge\lfloor a\rfloor+\lfloor b\rfloor\), la primera es mayor o igual que la segunda.</p>
-          <p><em>Para seguir pensando:</em> los coeficientes de este polinomio son además no negativos. ¿Qué cuentan?</p>
+          <p>Sean \(A(x)=\dfrac{x^{mn}-1}{x^n-1}\) y \(B(x)=\dfrac{x^m-1}{x-1}\). Las raíces de \(B\) son simples: las raíces \(m\)-ésimas de la unidad \(\zeta\neq1\). Entonces \(B\mid A\) si y solo si \(A(\zeta)=0\) para todas ellas.</p>
+          <p>Si \(\zeta^n\ne1\), \(A(\zeta)=\dfrac{\zeta^{mn}-1}{\zeta^n-1}=0\); si \(\zeta^n=1\), \(A(\zeta)=1+1+\dots+1=m\neq0\). Así, \(B\mid A\) si y solo si no existe \(\zeta\neq1\) con \(\zeta^m=\zeta^n=1\), es decir, si y solo si \(\gcd(m,n)=1\).</p>
+        </div>
+      </details>
+      <details class="mas">
+        <summary>Más problemas de la misma familia</summary>
+        <div class="answer">
+          <p>a) Demostrar que \(\dfrac{x^m-1}{x-1}\) es divisible por \(\dfrac{x^n-1}{x-1}\) si y solo si \(n\mid m\).</p>
+          <p>b) Sean \(a_1,\dots,a_n\) enteros mayores que \(1\), coprimos dos a dos. Probar que \(\dfrac{x^{a_1a_2\cdots a_n}-1}{x-1}\,(x-1)^n\) es divisible por \((x^{a_1}-1)(x^{a_2}-1)\cdots(x^{a_n}-1)\).</p>
+          <p>c) Probar que \(x^{4n}+x^{3n}+x^{2n}+x^n+1\) es divisible por \(x^4+x^3+x^2+x+1\) si y solo si \(5\nmid n\). (Es el caso \(m=5\) del problema principal.)</p>
+          <p>d) Demostrar que, para \(0\le n\le m\),
+          \[ \frac{(x^m-1)(x^{m-1}-1)\cdots(x^{m-n+1}-1)}{(x^n-1)(x^{n-1}-1)\cdots(x-1)} \]
+          es un polinomio con coeficientes enteros (Gauss).</p>
+          <details class="hint">
+            <summary>Pista</summary>
+            <div class="answer"><p>Una sola herramienta resuelve todo: \(x^m-1=\prod_{d\mid m}\Phi_d(x)\), donde los polinomios ciclotómicos \(\Phi_d\) son mónicos, de coeficientes enteros, irreducibles y distintos entre sí.</p></div>
+          </details>
+          <details>
+            <summary>Ver soluciones</summary>
+            <div class="answer">
+              <p>Como los \(\Phi_d\) son irreducibles y distintos, la divisibilidad entre productos de ciclotómicos se decide comparando la multiplicidad de cada \(\Phi_d\). Entre polinomios mónicos de coeficientes enteros, el cociente exacto tiene coeficientes enteros.</p>
+              <p><strong>a)</strong> \(\dfrac{x^m-1}{x-1}=\prod_{d\mid m,\,d&gt;1}\Phi_d\). Es divisible por \(\prod_{d\mid n,\,d&gt;1}\Phi_d\) si y solo si todo divisor \(d&gt;1\) de \(n\) divide a \(m\), lo que (tomando \(d=n\)) equivale a \(n\mid m\).</p>
+              <p><strong>b)</strong> Sea \(N=a_1\cdots a_n\). El dividendo es \((x^N-1)(x-1)^{n-1}=\Phi_1^{\,n}\prod_{d\mid N,\,d&gt;1}\Phi_d\), y el divisor es \(\Phi_1^{\,n}\prod_i\prod_{d\mid a_i,\,d&gt;1}\Phi_d\). Por la coprimalidad, los conjuntos \(\{d&gt;1: d\mid a_i\}\) son disjuntos y están contenidos en los divisores de \(N\).</p>
+              <p><strong>c)</strong> Es el problema principal con \(m=5\).</p>
+              <p><strong>d)</strong> La multiplicidad de \(\Phi_d\) en el numerador es la cantidad de múltiplos de \(d\) en \((m-n,m]\), es decir \(\lfloor m/d\rfloor-\lfloor (m-n)/d\rfloor\); en el denominador es \(\lfloor n/d\rfloor\). Como \(\lfloor a+b\rfloor\ge\lfloor a\rfloor+\lfloor b\rfloor\), la primera es mayor o igual que la segunda.</p>
+              <p><em>Para seguir pensando:</em> los coeficientes de este polinomio son además no negativos. ¿Qué cuentan?</p>
+            </div>
+          </details>
         </div>
       </details>
     </article>
 
+    <!-- ===================== 10 ===================== -->
     <article class="problem" id="p10">
       <div class="problem-head">
         <span class="num">N.º 10</span>
         <h3>Un determinante</h3>
+        <span class="dif" title="Dificultad">★★</span>
       </div>
       <div class="tags"><span class="tag">Álgebra lineal</span><span class="tag">Vandermonde</span></div>
       <p>Calcular el determinante de la matriz \(n\times n\) de entradas \(A_{rs}(x)=x^{(r-1)(s-1)}\), \(r,s=1,\dots,n\).</p>
@@ -371,6 +455,277 @@
           El exponente total de \(x\) es \(\sum_{i=0}^{n-1}i(n-1-i)=\binom n3\), y agrupando por \(k=j-i\):
           \[ \det A=x^{\binom n3}\prod_{k=1}^{n-1}\big(x^k-1\big)^{\,n-k}. \]
           Para \(n=2\) da \(x-1\); para \(n=3\), \(x(x-1)^2(x^2-1)\).</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 11 ===================== -->
+    <article class="problem" id="p11">
+      <div class="problem-head">
+        <span class="num">N.º 11</span>
+        <h3>Una suma de cosenos</h3>
+        <span class="dif" title="Dificultad">★★★</span>
+      </div>
+      <div class="tags"><span class="tag">Trigonometría</span><span class="tag">Teoría de números</span><span class="tag">Raíces de la unidad</span></div>
+      <p>Demostrar que
+      \[ \cos\frac{\pi}{13}+\cos\frac{3\pi}{13}+\cos\frac{9\pi}{13}=\frac{1+\sqrt{13}}{4}. \]</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Pasá a ángulos de la forma \(2\pi k/13\) y separá los \(k\) según sean o no cuadrados módulo \(13\). Las dos sumas que aparecen tienen suma y producto fáciles de calcular.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Como \(\cos(\pi-x)=-\cos x\), la suma pedida es \(S=-T\), con
+          \[ T=\cos\frac{4\pi}{13}+\cos\frac{10\pi}{13}+\cos\frac{12\pi}{13}. \]
+          Sea \(\zeta=e^{2\pi i/13}\). Los restos cuadráticos no nulos módulo \(13\) son \(R=\{1,3,4,9,10,12\}\) y los no restos \(N=\{2,5,6,7,8,11\}\). Como \(-1\equiv 12\) es resto, ambos conjuntos son simétricos (\(x\leftrightarrow -x\)), así que
+          \[ \eta_0=\sum_{r\in R}\zeta^r=2\Big(\cos\tfrac{2\pi}{13}+\cos\tfrac{6\pi}{13}+\cos\tfrac{8\pi}{13}\Big),\qquad
+             \eta_1=\sum_{s\in N}\zeta^s=2T. \]</p>
+          <p><strong>Suma.</strong> \(\eta_0+\eta_1=\zeta+\zeta^2+\dots+\zeta^{12}=-1\).</p>
+          <p><strong>Producto.</strong> \(\eta_0\eta_1=\sum_{r\in R,\,s\in N}\zeta^{r+s}\): son \(36\) términos y nunca \(r+s\equiv 0\) (porque \(-r\in R\)). Para \(c\not\equiv 0\) sea \(M(c)\) el número de pares \((r,s)\in R\times N\) con \(r+s\equiv c\). Si \(q\in R\), la biyección \((r,s)\mapsto(qr,qs)\) muestra \(M(qc)=M(c)\); si \(m\in N\), la biyección \((r,s)\mapsto(ms,mr)\) (de nuevo un par en \(R\times N\)) muestra \(M(mc)=M(c)\). Luego \(M\) es constante, igual a \(36/12=3\), y
+          \[ \eta_0\eta_1=3(\zeta+\dots+\zeta^{12})=-3. \]</p>
+          <p>Así \(\eta_0,\eta_1\) son las raíces de \(x^2+x-3=0\), es decir \(\frac{-1\pm\sqrt{13}}{2}\). Para decidir cuál es cuál: \(\cos\frac{4\pi}{13}+\cos\frac{12\pi}{13}=2\cos\frac{8\pi}{13}\cos\frac{4\pi}{13}&lt;0\) (pues \(\frac{8\pi}{13}&gt;\frac{\pi}{2}\)) y \(\cos\frac{10\pi}{13}&lt;0\), luego \(T&lt;0\). Por lo tanto \(\eta_1=\frac{-1-\sqrt{13}}{2}\), \(T=\frac{-1-\sqrt{13}}{4}\) y
+          \[ S=-T=\frac{1+\sqrt{13}}{4}. \]</p>
+          <p><em>Comentario.</em> \(\eta_0,\eta_1\) son los <em>períodos de Gauss</em> de orden \(2\) para \(p=13\); la identidad equivale a \(\eta_0-\eta_1=\sqrt{13}\), un caso de la suma de Gauss cuadrática.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 12 ===================== -->
+    <article class="problem" id="p12">
+      <div class="problem-head">
+        <span class="num">N.º 12</span>
+        <h3>Dos cuadrados a la vez</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Teoría de números</span><span class="tag">Ecuación de Pell</span></div>
+      <p>Mostrar que existen infinitos naturales \(n\) tales que \(2n+1\) y \(3n+1\) son cuadrados perfectos, y que todos esos \(n\) son múltiplos de \(40\).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Escribí \(2n+1=a^2\), \(3n+1=b^2\) y eliminá \(n\). Para la divisibilidad, mirá módulo \(8\) y módulo \(5\).</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p><strong>Infinitos.</strong> Si \(2n+1=a^2\) y \(3n+1=b^2\), eliminando \(n\) queda \(3a^2-2b^2=1\). Recíprocamente, si \(3a^2-2b^2=1\), entonces \(a\) es impar, \(n=\frac{a^2-1}{2}\) es natural y \(3n+1=\frac{3a^2-1}{2}=b^2\). Basta ver que la ecuación tiene infinitas soluciones. Un cálculo directo muestra
+          \[ 3(5a+4b)^2-2(6a+5b)^2=3a^2-2b^2, \]
+          así que \((a,b)\mapsto(5a+4b,\,6a+5b)\) lleva soluciones en soluciones, estrictamente mayores. Partiendo de \((1,1)\) se obtiene \((9,11)\), \((89,109)\), \((881,1079)\), …, es decir \(n=40,\ 3960,\ 388080,\dots\)</p>
+          <p><strong>Múltiplos de 8.</strong> Todo cuadrado impar es \(\equiv 1 \pmod 8\). Como \(2n+1\) es un cuadrado impar, \(8\mid 2n\), así que \(n\) es par; entonces \(3n+1\) también es un cuadrado impar y \(8\mid 3n\), es decir \(8\mid n\).</p>
+          <p><strong>Múltiplos de 5.</strong> Los cuadrados módulo \(5\) son \(0,1,4\). Como \((2n+1)+(3n+1)=5n+2\equiv 2\), y la única forma de obtener \(2\) sumando dos cuadrados módulo \(5\) es \(1+1\), debe ser \(2n+1\equiv1\), o sea \(5\mid n\). En total, \(40\mid n\).</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 13 ===================== -->
+    <article class="problem" id="p13">
+      <div class="problem-head">
+        <span class="num">N.º 13</span>
+        <h3>Un triangular doble de otro</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Teoría de números</span><span class="tag">Ecuación de Pell</span></div>
+      <p>Los números triangulares son los de la forma \(\frac{n(n+1)}{2}\), con \(n\) entero. Probar que la ecuación \(t''=2t'\) tiene infinitas soluciones con \(t',t''\) triangulares (no nulos).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Multiplicá por \(8\) y completá cuadrados.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Con \(t''=\frac{m(m+1)}{2}\) y \(t'=\frac{k(k+1)}{2}\), la ecuación es \(m(m+1)=2k(k+1)\). Multiplicando por \(4\) y sumando \(1\):
+          \[ (2m+1)^2-1=2\big((2k+1)^2-1\big)\iff x^2-2y^2=-1,\qquad x=2m+1,\ y=2k+1. \]
+          Basta encontrar infinitas soluciones de \(x^2-2y^2=-1\) con \(x,y\) impares. Se verifica que
+          \[ (3x+4y)^2-2(2x+3y)^2=x^2-2y^2, \]
+          y que \(3x+4y\equiv x\), \(2x+3y\equiv y \pmod 2\), así que la transformación conserva soluciones y paridad. Desde \((1,1)\) salen \((7,5)\), \((41,29)\), \((239,169)\), …, que dan
+          \[ 6=2\cdot 3,\qquad 210=2\cdot 105,\qquad 7140=2\cdot 3570,\ \dots \]</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 14 ===================== -->
+    <article class="problem" id="p14">
+      <div class="problem-head">
+        <span class="num">N.º 14</span>
+        <h3>El MCD de los binomiales impares</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Teoría de números</span><span class="tag">Combinatoria</span></div>
+      <p>Hallar el máximo común divisor de
+      \[ \binom{2n}{1},\ \binom{2n}{3},\ \binom{2n}{5},\ \dots,\ \binom{2n}{2n-1}. \]</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>¿Cuánto vale la suma de todos ellos? ¿Y qué relación hay entre \(r\binom{2n}{r}\) y \(2n\)?</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p><strong>Respuesta:</strong> \(2^v\), la mayor potencia de \(2\) que divide a \(2n\). (Por ejemplo, para \(n=6\): \(12, 220, 792, \dots\) tienen MCD \(4\).)</p>
+          <p>Sea \(d\) el MCD. Por un lado \(d\mid\binom{2n}{1}=2n\). Por otro, la suma de los binomiales de índice impar es \(2^{2n-1}\), así que \(d\mid 2^{2n-1}\). Luego \(d\mid 2^v\).</p>
+          <p>Recíprocamente, de \(r\binom{2n}{r}=2n\binom{2n-1}{r-1}\) se tiene \(2^v\mid r\binom{2n}{r}\); como \(r\) es impar, \(2^v\mid\binom{2n}{r}\). Por lo tanto \(d=2^v\).</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 15 ===================== -->
+    <article class="problem" id="p15">
+      <div class="problem-head">
+        <span class="num">N.º 15</span>
+        <h3>Cruces de diagonales</h3>
+        <span class="dif" title="Dificultad">★</span>
+      </div>
+      <div class="tags"><span class="tag">Combinatoria</span><span class="tag">Geometría</span></div>
+      <p>Sea un \(n\)-gono convexo plano tal que tres cualesquiera de sus diagonales no concurren en un punto. Hallar el número de puntos de intersección de las diagonales <strong>en el interior</strong> del polígono.</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>¿Cuántos vértices "usa" cada punto de cruce?</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p><strong>Respuesta:</strong> \(\binom{n}{4}\).</p>
+          <p>Dos diagonales con un extremo común solo se cortan en ese vértice, que no es interior. Así, cada punto interior de cruce es la intersección de dos diagonales con cuatro extremos distintos, y queda determinado por esos cuatro vértices. Recíprocamente, cuatro vértices cualesquiera forman un cuadrilátero convexo, cuyas dos diagonales se cortan exactamente una vez, en el interior. Como no hay tres diagonales concurrentes, puntos distintos corresponden a cuaternas distintas: la correspondencia es biyectiva.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 16 ===================== -->
+    <article class="problem" id="p16">
+      <div class="problem-head">
+        <span class="num">N.º 16</span>
+        <h3>Una suma sobre particiones</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Combinatoria</span><span class="tag">Doble conteo</span></div>
+      <p>Probar que
+      \[ \sum \frac{1}{p_1!\,p_2!\cdots p_n!}=\frac{1}{k!}\binom{n-1}{k-1}, \]
+      donde la suma recorre los \((p_1,\dots,p_n)\) enteros con \(p_i\ge 0\), \(p_1+p_2+\dots+p_n=k\) y \(p_1+2p_2+\dots+np_n=n\).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Multiplicá por \(k!\) y pensá qué cuenta \(\frac{k!}{p_1!\cdots p_n!}\).</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Las condiciones dicen que \((p_i)\) describe una <em>partición</em> de \(n\) en \(k\) partes, con \(p_i\) partes iguales a \(i\). Multiplicando por \(k!\), hay que probar
+          \[ \sum\frac{k!}{p_1!\cdots p_n!}=\binom{n-1}{k-1}. \]
+          El término \(\frac{k!}{p_1!\cdots p_n!}\) es el número de maneras de <em>ordenar</em> las \(k\) partes de esa partición, es decir, el número de <em>composiciones</em> (sumas ordenadas \(n=c_1+\dots+c_k\), \(c_j\ge 1\)) que la producen. Sumando sobre todas las particiones se obtienen todas las composiciones de \(n\) en \(k\) partes, cada una una vez. Y estas son \(\binom{n-1}{k-1}\): se eligen \(k-1\) de los \(n-1\) huecos entre \(n\) puntos alineados para cortar.</p>
+          <p><em>Otra vía.</em> El lado izquierdo es el coeficiente de \(x^n\) en \(\frac{1}{k!}(x+x^2+\cdots)^k=\frac{1}{k!}\,\frac{x^k}{(1-x)^k}\).</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 17 ===================== -->
+    <article class="problem" id="p17">
+      <div class="problem-head">
+        <span class="num">N.º 17</span>
+        <h3>Un determinante por bloques</h3>
+        <span class="dif" title="Dificultad">★</span>
+      </div>
+      <div class="tags"><span class="tag">Álgebra lineal</span><span class="tag">Determinantes</span></div>
+      <p>Sea \(A\) una matriz \(m\times n\), \(A^t\) su traspuesta y \(1_k\) la identidad \(k\times k\). Calcular
+      \[ \det\begin{pmatrix} 1_n+A^tA & A^t\\ A & 1_m\end{pmatrix}. \]</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Buscá una matriz triangular por bloques, de determinante \(1\), que al multiplicar elimine el bloque \(A^t\).</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p><strong>Respuesta:</strong> \(1\). En efecto,
+          \[ \begin{pmatrix} 1_n & -A^t\\ 0 & 1_m\end{pmatrix}
+             \begin{pmatrix} 1_n+A^tA & A^t\\ A & 1_m\end{pmatrix}
+           = \begin{pmatrix} 1_n & 0\\ A & 1_m\end{pmatrix}, \]
+          y las dos matrices triangulares por bloques tienen determinante \(1\).</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 18 ===================== -->
+    <article class="problem" id="p18">
+      <div class="problem-head">
+        <span class="num">N.º 18</span>
+        <h3>Arriba \(a\), abajo \(b\)</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Álgebra lineal</span><span class="tag">Determinantes</span></div>
+      <p>Sean \(a,b,p_1,\dots,p_n\) reales, con \(a\neq b\), y \(f(x)=(p_1-x)(p_2-x)\cdots(p_n-x)\). Probar que
+      \[ \begin{vmatrix}
+      p_1 & a & a & \cdots & a\\
+      b & p_2 & a & \cdots & a\\
+      b & b & p_3 & \cdots & a\\
+      \vdots & & & \ddots & \vdots\\
+      b & b & b & \cdots & p_n
+      \end{vmatrix} = \frac{b\,f(a)-a\,f(b)}{b-a}. \]</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Restale \(x\) a <em>todas</em> las entradas. ¿Cómo depende de \(x\) el determinante? ¿Qué pasa en \(x=a\) y en \(x=b\)?</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Sea \(D(x)\) el determinante de la matriz que resulta de restar \(x\) a todas las entradas. Restando la primera fila a las demás, \(x\) queda solo en la primera fila; desarrollando por ella, \(D(x)=D+Cx\) es lineal en \(x\), con \(D=D(0)\) el determinante buscado.</p>
+          <p>Para \(x=a\) la matriz queda triangular inferior (ceros arriba de la diagonal), luego \(D(a)=\prod(p_i-a)=f(a)\). Análogamente \(D(b)=f(b)\). Resolviendo
+          \[ D+Ca=f(a),\qquad D+Cb=f(b) \]
+          se obtiene \(D=\dfrac{b\,f(a)-a\,f(b)}{b-a}\).</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 19 ===================== -->
+    <article class="problem" id="p19">
+      <div class="problem-head">
+        <span class="num">N.º 19</span>
+        <h3>Raíces de la unidad y una columna de unos</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Álgebra lineal</span><span class="tag">Raíces de la unidad</span></div>
+      <p>Sea \(\omega\) una raíz \(n\)-ésima primitiva de la unidad y \(A=(a_{ij})\) con \(a_{ij}=\omega^{ij}\), \(1\le i,j\le n-1\). Sea \(B_k\) la matriz que resulta de reemplazar la \(k\)-ésima columna de \(A\) por una columna de unos. Probar que
+      \[ \det B_k=-\det A\qquad (k=1,2,\dots,n-1). \]</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>¿Cuánto vale la suma de las columnas de \(A\)?</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Para \(1\le i\le n-1\), \(\omega^i\neq 1\) y \(\sum_{j=0}^{n-1}\omega^{ij}=\frac{\omega^{in}-1}{\omega^i-1}=0\), así que
+          \[ \sum_{j=1}^{n-1}\omega^{ij}=-1. \]
+          Es decir, la columna de unos es \(-(C_1+\dots+C_{n-1})\), donde \(C_j\) son las columnas de \(A\). Por multilinealidad, al poner esa combinación en el lugar \(k\) solo sobrevive el sumando \(-C_k\) (los demás repiten una columna):
+          \[ \det B_k=\det(C_1,\dots,-C_k,\dots,C_{n-1})=-\det A. \]</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ===================== 20 ===================== -->
+    <article class="problem" id="p20">
+      <div class="problem-head">
+        <span class="num">N.º 20</span>
+        <h3>Los determinantes de Cauchy y de Hilbert</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Álgebra lineal</span><span class="tag">Determinantes</span></div>
+      <p>Calcular el determinante de Cauchy
+      \[ C_n=\det\left(\frac{1}{a_i+b_j}\right)_{1\le i,j\le n} \]
+      y, en particular, el determinante de la matriz de Hilbert \(\det\left(\frac{1}{i+j-1}\right)_{1\le i,j\le n}\).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Restá la última fila a las demás y después la última columna a las demás: aparece \(C_{n-1}\). (Es la misma idea que en el determinante de Vandermonde.)</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p><strong>Respuesta:</strong>
+          \[ C_n=\frac{\prod_{i&lt;j}(a_j-a_i)(b_j-b_i)}{\prod_{i,j}(a_i+b_j)}. \]</p>
+          <p>Para \(i&lt;n\), restando la fila \(n\) a la fila \(i\):
+          \[ \frac{1}{a_i+b_j}-\frac{1}{a_n+b_j}=\frac{a_n-a_i}{(a_i+b_j)(a_n+b_j)}. \]
+          Sacamos \(a_n-a_i\) de cada fila \(i&lt;n\) y \(\frac{1}{a_n+b_j}\) de cada columna \(j\): la última fila queda toda de unos y las demás vuelven a ser \(\frac{1}{a_i+b_j}\). Ahora, para \(j&lt;n\), restamos la columna \(n\) a la columna \(j\):
+          \[ \frac{1}{a_i+b_j}-\frac{1}{a_i+b_n}=\frac{b_n-b_j}{(a_i+b_j)(a_i+b_n)}, \]
+          y la última fila queda \((0,\dots,0,1)\). Sacando \(b_n-b_j\) de cada columna \(j&lt;n\) y \(\frac{1}{a_i+b_n}\) de cada fila \(i&lt;n\), y desarrollando por la última fila:
+          \[ C_n=\frac{\prod_{i&lt;n}(a_n-a_i)(b_n-b_i)}{\prod_{j\le n}(a_n+b_j)\,\prod_{i&lt;n}(a_i+b_n)}\;C_{n-1}. \]
+          Por inducción (con \(C_1=\frac{1}{a_1+b_1}\)) se obtiene la fórmula.</p>
+          <p><strong>Hilbert.</strong> Con \(a_i=i\), \(b_j=j-1\) es \(a_i+b_j=i+j-1\). Llamando \(c_n=1!\,2!\cdots(n-1)!\), se tiene \(\prod_{i&lt;j}(j-i)=c_n\) y \(\prod_{i,j}(i+j-1)=\prod_{i=1}^{n}\frac{(i+n-1)!}{(i-1)!}=\frac{c_{2n}}{c_n^2}\). Luego
+          \[ \det\left(\frac{1}{i+j-1}\right)=\frac{c_n^4}{c_{2n}}. \]
+          Por ejemplo, para \(n=2\): \(\frac{1}{1!\,2!\,3!}=\frac{1}{12}\), y en efecto \(\frac13-\frac14=\frac{1}{12}\).</p>
         </div>
       </details>
     </article>
@@ -391,6 +746,69 @@
     Problemas Interesantes · problemas-interesantes.github.io
   </footer>
 </div>
+
+<script>
+// Arma el índice y el filtro por tema a partir de los problemas de la página.
+(function () {
+  var problemas = Array.prototype.slice.call(document.querySelectorAll('article.problem'));
+  var lista = document.getElementById('lista-indice');
+  var filtro = document.getElementById('filtro');
+  var temas = {};
+
+  problemas.forEach(function (art) {
+    var tags = Array.prototype.map.call(art.querySelectorAll('.tags .tag'), function (t) { return t.textContent.trim(); });
+    art.dataset.tags = tags.join('|');
+    tags.forEach(function (t) { temas[t] = (temas[t] || 0) + 1; });
+
+    var li = document.createElement('li');
+    li.dataset.tags = art.dataset.tags;
+    var a = document.createElement('a');
+    a.href = '#' + art.id;
+    var n = document.createElement('span');
+    n.className = 'n';
+    n.textContent = art.querySelector('.num').textContent.replace('N.º ', '');
+    a.appendChild(n);
+    var t = document.createElement('span');
+    t.className = 't';
+    t.textContent = art.querySelector('h3').textContent + ' ';
+    var dif = art.querySelector('.problem-head .dif');
+    if (dif) {
+      var d = document.createElement('span');
+      d.className = 'dif';
+      d.textContent = dif.textContent;
+      t.appendChild(d);
+    }
+    a.appendChild(t);
+    li.appendChild(a);
+    lista.appendChild(li);
+  });
+
+  function boton(etiqueta, valor) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = etiqueta;
+    b.dataset.valor = valor;
+    b.setAttribute('aria-pressed', valor === '' ? 'true' : 'false');
+    b.addEventListener('click', function () { aplicar(valor); });
+    filtro.appendChild(b);
+  }
+
+  function aplicar(valor) {
+    Array.prototype.forEach.call(filtro.children, function (b) {
+      b.setAttribute('aria-pressed', b.dataset.valor === valor ? 'true' : 'false');
+    });
+    var visible = function (el) { return valor === '' || el.dataset.tags.split('|').indexOf(valor) !== -1; };
+    problemas.forEach(function (art) { art.style.display = visible(art) ? '' : 'none'; });
+    Array.prototype.forEach.call(lista.children, function (li) { li.style.display = visible(li) ? '' : 'none'; });
+  }
+
+  boton('Todos', '');
+  Object.keys(temas)
+    .filter(function (t) { return temas[t] >= 2; })
+    .sort(function (x, y) { return x.localeCompare(y, 'es'); })
+    .forEach(function (t) { boton(t + ' (' + temas[t] + ')', t); });
+})();
+</script>
 
 </body>
 </html>
