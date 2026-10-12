@@ -206,6 +206,174 @@
         </div>
       </details>
     </article>
+
+    <article class="problem" id="p4">
+      <div class="problem-head">
+        <span class="num">N.º 4</span>
+        <h3>La integral de un polinomio y sus coeficientes</h3>
+      </div>
+      <div class="tags"><span class="tag">Desigualdades</span><span class="tag">Cauchy–Schwarz</span></div>
+      <p>Sea \(p(t)=a_0+a_1t+\dots+a_nt^n\) un polinomio de coeficientes reales. Probar que
+      \[ \int_0^1 |p(t)|\,dt \;\le\; \frac{\pi}{2}\sqrt{a_0^2+a_1^2+\dots+a_n^2}. \]
+      Generalizar.</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Acotá \(|p(t)|\) punto a punto con Cauchy–Schwarz. ¿Qué integral conocida vale \(\pi/2\)?</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Para \(0\le t&lt;1\), por Cauchy–Schwarz,
+          \[ |p(t)| \le \Big(\sum_k a_k^2\Big)^{1/2}\Big(\sum_{k=0}^n t^{2k}\Big)^{1/2}
+             \le \|a\|\Big(\sum_{k\ge0} t^{2k}\Big)^{1/2} = \frac{\|a\|}{\sqrt{1-t^2}}. \]
+          Integrando, \(\displaystyle\int_0^1 |p| \le \|a\|\int_0^1\frac{dt}{\sqrt{1-t^2}} = \frac{\pi}{2}\|a\|.\)</p>
+          <p><strong>Generalizaciones.</strong> El mismo argumento vale para series \(\sum a_kt^k\) con \(\sum a_k^2&lt;\infty\). Con Hölder en lugar de Cauchy–Schwarz: si \(\tfrac1p+\tfrac1q=1\), \(1&lt;q&lt;\infty\),
+          \[ \int_0^1 |p(t)|\,dt \le \|a\|_p\int_0^1 (1-t^q)^{-1/q}\,dt = \|a\|_p\,\frac{\pi/q}{\sin(\pi/q)}, \]
+          usando \(u=t^q\) y la función Beta. Para \(q=2\) se recupera \(\pi/2\).</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p5">
+      <div class="problem-head">
+        <span class="num">N.º 5</span>
+        <h3>Acotando \(e\)</h3>
+      </div>
+      <div class="tags"><span class="tag">Desigualdades</span><span class="tag">Análisis</span></div>
+      <p>Hallar el máximo valor de \(\alpha\) y el mínimo valor de \(\beta\) tales que
+      \[ \Big(1+\frac1n\Big)^{n+\alpha} \le e \le \Big(1+\frac1n\Big)^{n+\beta} \]
+      para todo entero \(n&gt;0\).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Tomá logaritmos y despejá. Estudiá \(g(x)=\dfrac{1}{\ln(1+x)}-\dfrac1x\) en \((0,1]\).</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Tomando logaritmos, las condiciones son \(\alpha \le g(1/n)\) y \(\beta\ge g(1/n)\) para todo \(n\), con \(g(x)=\dfrac{1}{\ln(1+x)}-\dfrac1x\).</p>
+          <p><em>\(g\) es decreciente en \((0,1]\).</em> \(g'(x)&lt;0\) equivale a \(\ln(1+x)&lt;\dfrac{x}{\sqrt{1+x}}\). La función \(h(x)=\dfrac{x}{\sqrt{1+x}}-\ln(1+x)\) cumple \(h(0)=0\) y \(h'(x)=\dfrac{2+x}{2(1+x)^{3/2}}-\dfrac{1}{1+x}&gt;0\), pues equivale a \((2+x)^2&gt;4(1+x)\), es decir \(x^2&gt;0\).</p>
+          <p>Además \(\dfrac{1}{\ln(1+x)}=\dfrac1x+\dfrac12+O(x)\), así que \(g(x)\to\tfrac12\) cuando \(x\to0\). Los valores \(g(1/n)\) recorren \([\,g(1),\tfrac12)\), y entonces
+          \[ \alpha_{\max}=\frac{1}{\ln 2}-1\approx 0{,}4427,\qquad \beta_{\min}=\frac12. \]
+          El primero se alcanza en \(n=1\); el segundo es un supremo que no se alcanza.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p6">
+      <div class="problem-head">
+        <span class="num">N.º 6</span>
+        <h3>El triángulo inscripto de perímetro mínimo</h3>
+      </div>
+      <div class="tags"><span class="tag">Geometría</span><span class="tag">Reflexiones</span></div>
+      <p>Dado un triángulo acutángulo, hallar el triángulo de perímetro mínimo inscripto en él, con un vértice en cada lado.</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Fijá primero el vértice sobre un lado y reflejalo respecto de los otros dos lados.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Sea \(ABC\) acutángulo y \(DEF\) inscripto, con \(D\in BC\), \(E\in CA\), \(F\in AB\). Sean \(D'\) y \(D''\) los reflejos de \(D\) respecto de \(AB\) y \(AC\). Entonces \(DF+FE+ED = D'F+FE+ED'' \ge D'D''\), con igualdad cuando \(E\) y \(F\) están sobre el segmento \(D'D''\).</p>
+          <p>Como \(AD'=AD''=AD\) y \(\angle D'AD''=2\hat A&lt;180^\circ\), resulta \(D'D''=2\,AD\sin\hat A\), que es mínimo cuando \(AD\) es mínimo: \(D\) es el pie de la altura desde \(A\). Por simetría, \(E\) y \(F\) son los pies de las otras alturas.</p>
+          <p><strong>Respuesta:</strong> el triángulo órtico. La hipótesis de acutángulo garantiza que los puntos caen dentro de los lados; en un triángulo rectángulo u obtusángulo el mínimo es degenerado. (Problema de Fagnano.)</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p7">
+      <div class="problem-head">
+        <span class="num">N.º 7</span>
+        <h3>Un polinomio con todas sus raíces positivas</h3>
+      </div>
+      <div class="tags"><span class="tag">Polinomios</span><span class="tag">Desigualdad de las medias</span></div>
+      <p>Se sabe que el polinomio
+      \[ x^{20}-20x^{19}+a_{18}x^{18}+\dots+a_1x+1 \]
+      tiene todas sus raíces reales y positivas. Hallarlas.</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>¿Cuánto valen la suma y el producto de las raíces? Pensá en las medias aritmética y geométrica.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Sean \(r_1,\dots,r_{20}&gt;0\) las raíces. Por Vieta, \(\sum r_i=20\) y \(\prod r_i=1\). La media aritmética vale \(1\) y la geométrica también. Como hay igualdad en la desigualdad de las medias, todas las raíces son iguales: \(r_i=1\). El polinomio es \((x-1)^{20}\).</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p8">
+      <div class="problem-head">
+        <span class="num">N.º 8</span>
+        <h3>Inyectivo en los racionales, no en los reales</h3>
+      </div>
+      <div class="tags"><span class="tag">Polinomios</span><span class="tag">Aritmética</span></div>
+      <p>Construir un polinomio \(\mathbb R\to\mathbb R\) cuya restricción a los racionales sea inyectiva, pero que no sea inyectivo en los reales.</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Probá con \(x^3-2x\). Si \(f(x)=f(y)\) con \(x\neq y\), ¿qué ecuación cumplen \(x\) e \(y\)? Mirala módulo \(3\).</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Sea \(f(x)=x^3-2x\). No es inyectivo en \(\mathbb R\): \(f(0)=f(\sqrt2)=0\).</p>
+          <p>Si \(f(x)=f(y)\) con \(x\neq y\), dividiendo por \(x-y\) queda \(x^2+xy+y^2=2\), o sea \((2x+y)^2+3y^2=8\). Si \(x,y\) fueran racionales, escribiendo \(2x+y=A/C\), \(y=B/C\) con \(A,B,C\) enteros sin factor común, tendríamos \(A^2+3B^2=8C^2\). Módulo \(3\): \(A^2\equiv 2C^2\), y como los cuadrados son \(0\) o \(1\) módulo \(3\), debe ser \(3\mid A\) y \(3\mid C\). Entonces \(9\mid 3B^2\), luego \(3\mid B\): contradicción.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p9">
+      <div class="problem-head">
+        <span class="num">N.º 9</span>
+        <h3>Divisibilidad de polinomios</h3>
+      </div>
+      <div class="tags"><span class="tag">Polinomios</span><span class="tag">Raíces de la unidad</span></div>
+      <p>a) Demostrar que \(\dfrac{x^m-1}{x-1}\) es divisible por \(\dfrac{x^n-1}{x-1}\) si y solo si \(n\mid m\).</p>
+      <p>b) Sean \(a_1,\dots,a_n\) enteros mayores que \(1\), coprimos dos a dos. Probar que \(\dfrac{x^{a_1a_2\cdots a_n}-1}{x-1}\,(x-1)^n\) es divisible por \((x^{a_1}-1)(x^{a_2}-1)\cdots(x^{a_n}-1)\).</p>
+      <p>c) Probar que \(x^{4n}+x^{3n}+x^{2n}+x^n+1\) es divisible por \(x^4+x^3+x^2+x+1\) si y solo si \(5\nmid n\).</p>
+      <p>d) Probar que \(1+x^n+x^{2n}+\dots+x^{(m-1)n}\) es divisible por \(1+x+\dots+x^{m-1}\) si y solo si \(\gcd(m,n)=1\).</p>
+      <p>e) Demostrar que, para \(0\le n\le m\),
+      \[ \frac{(x^m-1)(x^{m-1}-1)\cdots(x^{m-n+1}-1)}{(x^n-1)(x^{n-1}-1)\cdots(x-1)} \]
+      es un polinomio con coeficientes enteros (Gauss).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Una sola herramienta resuelve todo: \(x^m-1=\prod_{d\mid m}\Phi_d(x)\), donde los polinomios ciclotómicos \(\Phi_d\) son mónicos, de coeficientes enteros, irreducibles y distintos entre sí. Para c) y d) alcanza con evaluar en raíces de la unidad.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Como los \(\Phi_d\) son irreducibles y distintos, la divisibilidad entre productos de ciclotómicos se decide comparando la multiplicidad de cada \(\Phi_d\). Entre polinomios mónicos de coeficientes enteros, el cociente exacto tiene coeficientes enteros.</p>
+          <p><strong>a)</strong> \(\dfrac{x^m-1}{x-1}=\prod_{d\mid m,\,d&gt;1}\Phi_d\). Es divisible por \(\prod_{d\mid n,\,d&gt;1}\Phi_d\) si y solo si todo divisor \(d&gt;1\) de \(n\) divide a \(m\), lo que (tomando \(d=n\)) equivale a \(n\mid m\).</p>
+          <p><strong>b)</strong> Sea \(N=a_1\cdots a_n\). El dividendo es \((x^N-1)(x-1)^{n-1}=\Phi_1^{\,n}\prod_{d\mid N,\,d&gt;1}\Phi_d\), y el divisor es \(\Phi_1^{\,n}\prod_i\prod_{d\mid a_i,\,d&gt;1}\Phi_d\). Por la coprimalidad, los conjuntos \(\{d&gt;1: d\mid a_i\}\) son disjuntos y están contenidos en los divisores de \(N\).</p>
+          <p><strong>d)</strong> Sean \(A(x)=\dfrac{x^{mn}-1}{x^n-1}\) y \(B(x)=\dfrac{x^m-1}{x-1}\). Las raíces de \(B\) son simples: las raíces \(m\)-ésimas de la unidad \(\zeta\neq1\). Si \(\zeta^n\ne1\), \(A(\zeta)=\dfrac{\zeta^{mn}-1}{\zeta^n-1}=0\); si \(\zeta^n=1\), \(A(\zeta)=m\neq0\). Existe \(\zeta\neq1\) con \(\zeta^m=\zeta^n=1\) si y solo si \(\gcd(m,n)&gt;1\).</p>
+          <p><strong>c)</strong> Es el caso \(m=5\) de d).</p>
+          <p><strong>e)</strong> La multiplicidad de \(\Phi_d\) en el numerador es la cantidad de múltiplos de \(d\) en \((m-n,m]\), es decir \(\lfloor m/d\rfloor-\lfloor (m-n)/d\rfloor\); en el denominador es \(\lfloor n/d\rfloor\). Como \(\lfloor a+b\rfloor\ge\lfloor a\rfloor+\lfloor b\rfloor\), la primera es mayor o igual que la segunda.</p>
+          <p><em>Para seguir pensando:</em> los coeficientes de este polinomio son además no negativos. ¿Qué cuentan?</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="problem" id="p10">
+      <div class="problem-head">
+        <span class="num">N.º 10</span>
+        <h3>Un determinante</h3>
+      </div>
+      <div class="tags"><span class="tag">Álgebra lineal</span><span class="tag">Vandermonde</span></div>
+      <p>Calcular el determinante de la matriz \(n\times n\) de entradas \(A_{rs}(x)=x^{(r-1)(s-1)}\), \(r,s=1,\dots,n\).</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Escribí \(x^{(r-1)(s-1)}=\big(x^{r-1}\big)^{s-1}\). ¿Qué matriz conocida es?</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Es la matriz de Vandermonde en los nodos \(1,x,\dots,x^{n-1}\). Entonces
+          \[ \det A=\prod_{0\le i&lt;j\le n-1}\big(x^j-x^i\big)=\prod_{0\le i&lt;j\le n-1}x^i\big(x^{j-i}-1\big). \]
+          El exponente total de \(x\) es \(\sum_{i=0}^{n-1}i(n-1-i)=\binom n3\), y agrupando por \(k=j-i\):
+          \[ \det A=x^{\binom n3}\prod_{k=1}^{n-1}\big(x^k-1\big)^{\,n-k}. \]
+          Para \(n=2\) da \(x-1\); para \(n=3\), \(x(x-1)^2(x^2-1)\).</p>
+        </div>
+      </details>
+    </article>
   </section>
 
   <section id="acerca" class="about">
