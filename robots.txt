@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://problemas-interesantes.github.io/sitemap.xml
