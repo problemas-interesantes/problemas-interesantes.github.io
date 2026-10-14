@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Divisibilidad de polinomios y raíces de la unidad | Problemas Interesantes</title>
+<meta name="description" content="1 + x^n + … + x^((m−1)n) es divisible por 1 + x + … + x^(m−1) si y solo si mcd(m,n) = 1. Problema de polinomios ciclotómicos, resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/divisibilidad-de-polinomios.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Divisibilidad de polinomios y raíces de la unidad | Problemas Interesantes">
+<meta property="og:description" content="1 + x^n + … + x^((m−1)n) es divisible por 1 + x + … + x^(m−1) si y solo si mcd(m,n) = 1. Problema de polinomios ciclotómicos, resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/divisibilidad-de-polinomios.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Divisibilidad de polinomios y raíces de la unidad", "headline": "Divisibilidad de polinomios y raíces de la unidad", "description": "1 + x^n + … + x^((m−1)n) es divisible por 1 + x + … + x^(m−1) si y solo si mcd(m,n) = 1. Problema de polinomios ciclotómicos, resuelto.", "url": "https://problemas-interesantes.github.io/problemas/divisibilidad-de-polinomios.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Polinomios"}, {"@type": "Thing", "name": "Raíces de la unidad"}], "keywords": "Polinomios, Raíces de la unidad, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Polinomios", "item": "https://problemas-interesantes.github.io/temas/polinomios.html"}, {"@type": "ListItem", "position": 3, "name": "Divisibilidad de polinomios y raíces de la unidad"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/polinomios.html">Polinomios</a> › Problema N.º 9</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 9</span>
+<h1 class="ptitle">Divisibilidad de polinomios</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/polinomios.html">Polinomios</a><a class="tag" href="../temas/raices-de-la-unidad.html">Raíces de la unidad</a></div>
+<p>Probar que
+      \[ 1+x^n+x^{2n}+\dots+x^{(m-1)n} \]
+      es divisible por \(1+x+\dots+x^{m-1}\) si y solo si \(\gcd(m,n)=1\).</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>¿Cuáles son las raíces de \(1+x+\dots+x^{m-1}\)? Evaluá el otro polinomio en ellas.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Sean \(A(x)=\dfrac{x^{mn}-1}{x^n-1}\) y \(B(x)=\dfrac{x^m-1}{x-1}\). Las raíces de \(B\) son simples: las raíces \(m\)-ésimas de la unidad \(\zeta\neq1\). Entonces \(B\mid A\) si y solo si \(A(\zeta)=0\) para todas ellas.</p>
+<p>Si \(\zeta^n\ne1\), \(A(\zeta)=\dfrac{\zeta^{mn}-1}{\zeta^n-1}=0\); si \(\zeta^n=1\), \(A(\zeta)=1+1+\dots+1=m\neq0\). Así, \(B\mid A\) si y solo si no existe \(\zeta\neq1\) con \(\zeta^m=\zeta^n=1\), es decir, si y solo si \(\gcd(m,n)=1\).</p>
+</div>
+</details>
+<details class="mas">
+<summary>Más problemas de la misma familia</summary>
+<div class="answer">
+<p>a) Demostrar que \(\dfrac{x^m-1}{x-1}\) es divisible por \(\dfrac{x^n-1}{x-1}\) si y solo si \(n\mid m\).</p>
+<p>b) Sean \(a_1,\dots,a_n\) enteros mayores que \(1\), coprimos dos a dos. Probar que \(\dfrac{x^{a_1a_2\cdots a_n}-1}{x-1}\,(x-1)^n\) es divisible por \((x^{a_1}-1)(x^{a_2}-1)\cdots(x^{a_n}-1)\).</p>
+<p>c) Probar que \(x^{4n}+x^{3n}+x^{2n}+x^n+1\) es divisible por \(x^4+x^3+x^2+x+1\) si y solo si \(5\nmid n\). (Es el caso \(m=5\) del problema principal.)</p>
+<p>d) Demostrar que, para \(0\le n\le m\),
+          \[ \frac{(x^m-1)(x^{m-1}-1)\cdots(x^{m-n+1}-1)}{(x^n-1)(x^{n-1}-1)\cdots(x-1)} \]
+          es un polinomio con coeficientes enteros (Gauss).</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Una sola herramienta resuelve todo: \(x^m-1=\prod_{d\mid m}\Phi_d(x)\), donde los polinomios ciclotómicos \(\Phi_d\) son mónicos, de coeficientes enteros, irreducibles y distintos entre sí.</p></div>
+</details>
+<details>
+<summary>Ver soluciones</summary>
+<div class="answer">
+<p>Como los \(\Phi_d\) son irreducibles y distintos, la divisibilidad entre productos de ciclotómicos se decide comparando la multiplicidad de cada \(\Phi_d\). Entre polinomios mónicos de coeficientes enteros, el cociente exacto tiene coeficientes enteros.</p>
+<p><strong>a)</strong> \(\dfrac{x^m-1}{x-1}=\prod_{d\mid m,\,d&gt;1}\Phi_d\). Es divisible por \(\prod_{d\mid n,\,d&gt;1}\Phi_d\) si y solo si todo divisor \(d&gt;1\) de \(n\) divide a \(m\), lo que (tomando \(d=n\)) equivale a \(n\mid m\).</p>
+<p><strong>b)</strong> Sea \(N=a_1\cdots a_n\). El dividendo es \((x^N-1)(x-1)^{n-1}=\Phi_1^{\,n}\prod_{d\mid N,\,d&gt;1}\Phi_d\), y el divisor es \(\Phi_1^{\,n}\prod_i\prod_{d\mid a_i,\,d&gt;1}\Phi_d\). Por la coprimalidad, los conjuntos \(\{d&gt;1: d\mid a_i\}\) son disjuntos y están contenidos en los divisores de \(N\).</p>
+<p><strong>c)</strong> Es el problema principal con \(m=5\).</p>
+<p><strong>d)</strong> La multiplicidad de \(\Phi_d\) en el numerador es la cantidad de múltiplos de \(d\) en \((m-n,m]\), es decir \(\lfloor m/d\rfloor-\lfloor (m-n)/d\rfloor\); en el denominador es \(\lfloor n/d\rfloor\). Como \(\lfloor a+b\rfloor\ge\lfloor a\rfloor+\lfloor b\rfloor\), la primera es mayor o igual que la segunda.</p>
+<p><em>Para seguir pensando:</em> los coeficientes de este polinomio son además no negativos. ¿Qué cuentan?</p>
+</div>
+</details>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="polinomio-inyectivo-en-los-racionales.html">← N.º 8: Inyectivo en los racionales, no en los reales</a><a class="sig" href="determinante-de-vandermonde.html">N.º 10: Un determinante →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="polinomio-inyectivo-en-los-racionales.html">N.º 8 · Inyectivo en los racionales, no en los reales</a> <span class="dif">★★</span></li><li><a href="polinomio-con-raices-positivas.html">N.º 7 · Un polinomio con todas sus raíces positivas</a> <span class="dif">★</span></li><li><a href="suma-de-cosenos-pi-13.html">N.º 11 · Una suma de cosenos</a> <span class="dif">★★★</span></li><li><a href="raices-de-la-unidad-y-una-columna-de-unos.html">N.º 19 · Raíces de la unidad y una columna de unos</a> <span class="dif">★★</span></li><li><a href="triangulos-equilateros-sobre-los-lados.html">N.º 36 · Triángulos equiláteros sobre los lados</a> <span class="dif">★★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desigualdad para promedios de 1/(1+x) | Problemas Interesantes</title>
+<meta name="description" content="Probar Σ a_i/(1+x_i) ≤ 1/(1 + ∏ x_i^(a_i)) para pesos a_i y 0 ≤ x_i ≤ 1. Desigualdad de convexidad, con caso de igualdad y solución.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/promedios-de-1-sobre-1-mas-x.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Desigualdad para promedios de 1/(1+x) | Problemas Interesantes">
+<meta property="og:description" content="Probar Σ a_i/(1+x_i) ≤ 1/(1 + ∏ x_i^(a_i)) para pesos a_i y 0 ≤ x_i ≤ 1. Desigualdad de convexidad, con caso de igualdad y solución.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/promedios-de-1-sobre-1-mas-x.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Desigualdad para promedios de 1/(1+x)", "headline": "Desigualdad para promedios de 1/(1+x)", "description": "Probar Σ a_i/(1+x_i) ≤ 1/(1 + ∏ x_i^(a_i)) para pesos a_i y 0 ≤ x_i ≤ 1. Desigualdad de convexidad, con caso de igualdad y solución.", "url": "https://problemas-interesantes.github.io/problemas/promedios-de-1-sobre-1-mas-x.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Desigualdades"}, {"@type": "Thing", "name": "Convexidad"}], "keywords": "Desigualdades, Convexidad, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Desigualdades", "item": "https://problemas-interesantes.github.io/temas/desigualdades.html"}, {"@type": "ListItem", "position": 3, "name": "Desigualdad para promedios de 1/(1+x)"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/desigualdades.html">Desigualdades</a> › Problema N.º 27</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 27</span>
+<h1 class="ptitle">Promedios de \(\frac{1}{1+x}\)</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/desigualdades.html">Desigualdades</a><a class="tag" href="../temas/convexidad.html">Convexidad</a></div>
+<p>Sean \(a_i\ge 0\) con \(\sum_{i=1}^n a_i=1\), y \(0\le x_i\le 1\). Probar que
+      \[ \sum_{i=1}^n\frac{a_i}{1+x_i}\le\frac{1}{1+x_1^{a_1}x_2^{a_2}\cdots x_n^{a_n}}. \]
+      ¿Cuándo vale la igualdad?</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Escribí \(x_i=e^{t_i}\) con \(t_i\le 0\) y estudiá la concavidad de \(f(t)=\dfrac{1}{1+e^t}\).</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Supongamos primero todos los \(x_i&gt;0\) y pongamos \(x_i=e^{t_i}\), con \(t_i\le0\). Para \(f(t)=\frac{1}{1+e^t}\),
+          \[ f''(t)=\frac{e^t\,(e^t-1)}{(1+e^t)^3}, \]
+          que es negativa para \(t&lt;0\). Así \(f\) es estrictamente cóncava en \((-\infty,0]\) y, por Jensen con pesos \(a_i\),
+          \[ \sum a_i f(t_i)\le f\Big(\sum a_it_i\Big)=\frac{1}{1+\prod x_i^{a_i}}. \]</p>
+<p>Si algún \(x_i=0\) con \(a_i&gt;0\), el miembro derecho vale \(1\) y el izquierdo es \(\le\sum a_i=1\). (Si \(a_i=0\), ese término no aparece.)</p>
+<p><strong>Igualdad:</strong> si y sólo si son iguales todos los \(x_i\) con \(a_i&gt;0\). En el caso con ceros, la igualdad pide \(\frac{a_j}{1+x_j}=a_j\) para todo \(j\), es decir, \(x_j=0\) para todo \(j\) con \(a_j&gt;0\).</p>
+<p><em>Comentario:</em> en \([0,\infty)\) la función \(f\) es convexa, así que si todos los \(x_i\ge1\) la desigualdad se invierte.</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="determinante-que-da-un-seno.html">← N.º 26: Un determinante que da un seno</a><a class="sig" href="esfera-inscripta-en-un-simplex.html">N.º 28: La esfera inscripta en un símplex →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="cadena-de-desigualdades.html">N.º 25 · Una cadena de desigualdades</a> <span class="dif">★★</span></li><li><a href="producto-de-sen-x-sobre-x.html">N.º 23 · Un producto de \(\frac{\operatorname{sen} x}{x}\)</a> <span class="dif">★★</span></li><li><a href="acotando-e.html">N.º 5 · Acotando \(e\)</a> <span class="dif">★★</span></li><li><a href="integral-de-un-polinomio-y-sus-coeficientes.html">N.º 4 · La integral de un polinomio y sus coeficientes</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

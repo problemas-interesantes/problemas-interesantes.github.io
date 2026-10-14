@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un polinomio inyectivo en Q pero no en R | Problemas Interesantes</title>
+<meta name="description" content="Construir un polinomio real cuya restricción a los racionales sea inyectiva pero que no sea inyectivo en los reales. Problema resuelto con pista.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/polinomio-inyectivo-en-los-racionales.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Un polinomio inyectivo en Q pero no en R | Problemas Interesantes">
+<meta property="og:description" content="Construir un polinomio real cuya restricción a los racionales sea inyectiva pero que no sea inyectivo en los reales. Problema resuelto con pista.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/polinomio-inyectivo-en-los-racionales.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Un polinomio inyectivo en Q pero no en R", "headline": "Un polinomio inyectivo en Q pero no en R", "description": "Construir un polinomio real cuya restricción a los racionales sea inyectiva pero que no sea inyectivo en los reales. Problema resuelto con pista.", "url": "https://problemas-interesantes.github.io/problemas/polinomio-inyectivo-en-los-racionales.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Polinomios"}, {"@type": "Thing", "name": "Teoría de números"}], "keywords": "Polinomios, Teoría de números, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Polinomios", "item": "https://problemas-interesantes.github.io/temas/polinomios.html"}, {"@type": "ListItem", "position": 3, "name": "Un polinomio inyectivo en Q pero no en R"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/polinomios.html">Polinomios</a> › Problema N.º 8</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 8</span>
+<h1 class="ptitle">Inyectivo en los racionales, no en los reales</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/polinomios.html">Polinomios</a><a class="tag" href="../temas/teoria-de-numeros.html">Teoría de números</a></div>
+<p>Construir un polinomio \(\mathbb R\to\mathbb R\) cuya restricción a los racionales sea inyectiva, pero que no sea inyectivo en los reales.</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Probá con \(x^3-2x\). Si \(f(x)=f(y)\) con \(x\neq y\), ¿qué ecuación cumplen \(x\) e \(y\)? Mirala módulo \(3\).</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Sea \(f(x)=x^3-2x\). No es inyectivo en \(\mathbb R\): \(f(0)=f(\sqrt2)=0\).</p>
+<p>Si \(f(x)=f(y)\) con \(x\neq y\), dividiendo por \(x-y\) queda \(x^2+xy+y^2=2\), o sea \((2x+y)^2+3y^2=8\). Si \(x,y\) fueran racionales, escribiendo \(2x+y=A/C\), \(y=B/C\) con \(A,B,C\) enteros sin factor común, tendríamos \(A^2+3B^2=8C^2\). Módulo \(3\): \(A^2\equiv 2C^2\), y como los cuadrados son \(0\) o \(1\) módulo \(3\), debe ser \(3\mid A\) y \(3\mid C\). Entonces \(9\mid 3B^2\), luego \(3\mid B\): contradicción.</p>
+<p><strong>Otra solución</strong> (por paridad). Sean \(\frac ab\neq\frac cd\) fracciones irreducibles con \(b,d&gt;0\) y \(f(\frac ab)=f(\frac cd)\). Quitando denominadores, \(d^3a(a^2-2b^2)=b^3c(c^2-2d^2)\), donde \(a^2-2b^2\neq0\) y \(c^2-2d^2\neq0\) porque \(\sqrt2\) es irracional. Como \(b\) es coprimo con \(a\) y con \(a^2-2b^2\), resulta \(b^3\mid d^3\); análogamente \(d^3\mid b^3\), luego \(b=d\). Entonces \(a^3-c^3=2b^2(a-c)\), o sea
+          \[ a^2+ac+c^2=2b^2. \]
+          Si \(a\) o \(c\) es impar, el miembro izquierdo es impar: imposible. Si ambos son pares, el izquierdo es múltiplo de \(4\), luego \(b\) es par, contra que \(\frac ab\) es irreducible.</p>
+<p><strong>Generalización.</strong> El mismo razonamiento prueba que \(x^n-2x\), con \(n\ge3\) impar, es inyectivo en \(\mathbb Q\) y no en \(\mathbb R\) (\(f(0)=f(\sqrt[n-1]{2})\)). <em>Para seguir pensando:</em> probar lo mismo para \(2x^3-x\), \(x^3-6x\), \(2x^3-5x\), \(x^3+2x^2-2x+1\) y \(x^6-3x^3\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="polinomio-con-raices-positivas.html">← N.º 7: Un polinomio con todas sus raíces positivas</a><a class="sig" href="divisibilidad-de-polinomios.html">N.º 9: Divisibilidad de polinomios →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="polinomio-con-raices-positivas.html">N.º 7 · Un polinomio con todas sus raíces positivas</a> <span class="dif">★</span></li><li><a href="divisibilidad-de-polinomios.html">N.º 9 · Divisibilidad de polinomios</a> <span class="dif">★★</span></li><li><a href="suma-de-cosenos-pi-13.html">N.º 11 · Una suma de cosenos</a> <span class="dif">★★★</span></li><li><a href="2n-mas-1-y-3n-mas-1-cuadrados.html">N.º 12 · Dos cuadrados a la vez</a> <span class="dif">★★</span></li><li><a href="numero-triangular-doble-de-otro.html">N.º 13 · Un triangular doble de otro</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

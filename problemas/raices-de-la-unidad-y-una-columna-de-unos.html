@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matriz de raíces de la unidad y una columna de unos | Problemas Interesantes</title>
+<meta name="description" content="Al reemplazar una columna de la matriz (ω^(ij)) por unos, el determinante cambia de signo. Problema de álgebra lineal con raíces de la unidad, resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/raices-de-la-unidad-y-una-columna-de-unos.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matriz de raíces de la unidad y una columna de unos | Problemas Interesantes">
+<meta property="og:description" content="Al reemplazar una columna de la matriz (ω^(ij)) por unos, el determinante cambia de signo. Problema de álgebra lineal con raíces de la unidad, resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/raices-de-la-unidad-y-una-columna-de-unos.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Matriz de raíces de la unidad y una columna de unos", "headline": "Matriz de raíces de la unidad y una columna de unos", "description": "Al reemplazar una columna de la matriz (ω^(ij)) por unos, el determinante cambia de signo. Problema de álgebra lineal con raíces de la unidad, resuelto.", "url": "https://problemas-interesantes.github.io/problemas/raices-de-la-unidad-y-una-columna-de-unos.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Álgebra lineal"}, {"@type": "Thing", "name": "Raíces de la unidad"}], "keywords": "Álgebra lineal, Raíces de la unidad, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Álgebra lineal", "item": "https://problemas-interesantes.github.io/temas/algebra-lineal.html"}, {"@type": "ListItem", "position": 3, "name": "Matriz de raíces de la unidad y una columna de unos"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/algebra-lineal.html">Álgebra lineal</a> › Problema N.º 19</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 19</span>
+<h1 class="ptitle">Raíces de la unidad y una columna de unos</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/algebra-lineal.html">Álgebra lineal</a><a class="tag" href="../temas/raices-de-la-unidad.html">Raíces de la unidad</a></div>
+<p>Sea \(\omega\) una raíz \(n\)-ésima primitiva de la unidad y \(A=(a_{ij})\) con \(a_{ij}=\omega^{ij}\), \(1\le i,j\le n-1\). Sea \(B_k\) la matriz que resulta de reemplazar la \(k\)-ésima columna de \(A\) por una columna de unos. Probar que
+      \[ \det B_k=-\det A\qquad (k=1,2,\dots,n-1). \]</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>¿Cuánto vale la suma de las columnas de \(A\)?</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Para \(1\le i\le n-1\), \(\omega^i\neq 1\) y \(\sum_{j=0}^{n-1}\omega^{ij}=\frac{\omega^{in}-1}{\omega^i-1}=0\), así que
+          \[ \sum_{j=1}^{n-1}\omega^{ij}=-1. \]
+          Es decir, la columna de unos es \(-(C_1+\dots+C_{n-1})\), donde \(C_j\) son las columnas de \(A\). Por multilinealidad, al poner esa combinación en el lugar \(k\) solo sobrevive el sumando \(-C_k\) (los demás repiten una columna):
+          \[ \det B_k=\det(C_1,\dots,-C_k,\dots,C_{n-1})=-\det A. \]</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="determinante-a-arriba-b-abajo.html">← N.º 18: Arriba \(a\), abajo \(b\)</a><a class="sig" href="determinante-de-cauchy-y-de-hilbert.html">N.º 20: Los determinantes de Cauchy y de Hilbert →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="determinante-a-arriba-b-abajo.html">N.º 18 · Arriba \(a\), abajo \(b\)</a> <span class="dif">★★</span></li><li><a href="determinante-de-cauchy-y-de-hilbert.html">N.º 20 · Los determinantes de Cauchy y de Hilbert</a> <span class="dif">★★</span></li><li><a href="determinante-por-bloques.html">N.º 17 · Un determinante por bloques</a> <span class="dif">★</span></li><li><a href="matriz-ceros-en-la-diagonal-y-unos.html">N.º 24 · Ceros en la diagonal, \(\pm1\) fuera de ella</a> <span class="dif">★★</span></li><li><a href="determinante-que-da-un-seno.html">N.º 26 · Un determinante que da un seno</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

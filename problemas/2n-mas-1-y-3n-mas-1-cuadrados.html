@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2n+1 y 3n+1 cuadrados perfectos a la vez | Problemas Interesantes</title>
+<meta name="description" content="Hay infinitos n con 2n+1 y 3n+1 cuadrados perfectos, y todos son múltiplos de 40. Problema de teoría de números y ecuación de Pell, resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/2n-mas-1-y-3n-mas-1-cuadrados.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2n+1 y 3n+1 cuadrados perfectos a la vez | Problemas Interesantes">
+<meta property="og:description" content="Hay infinitos n con 2n+1 y 3n+1 cuadrados perfectos, y todos son múltiplos de 40. Problema de teoría de números y ecuación de Pell, resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/2n-mas-1-y-3n-mas-1-cuadrados.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "2n+1 y 3n+1 cuadrados perfectos a la vez", "headline": "2n+1 y 3n+1 cuadrados perfectos a la vez", "description": "Hay infinitos n con 2n+1 y 3n+1 cuadrados perfectos, y todos son múltiplos de 40. Problema de teoría de números y ecuación de Pell, resuelto.", "url": "https://problemas-interesantes.github.io/problemas/2n-mas-1-y-3n-mas-1-cuadrados.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Teoría de números"}, {"@type": "Thing", "name": "Ecuación de Pell"}], "keywords": "Teoría de números, Ecuación de Pell, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Teoría de números", "item": "https://problemas-interesantes.github.io/temas/teoria-de-numeros.html"}, {"@type": "ListItem", "position": 3, "name": "2n+1 y 3n+1 cuadrados perfectos a la vez"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/teoria-de-numeros.html">Teoría de números</a> › Problema N.º 12</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 12</span>
+<h1 class="ptitle">Dos cuadrados a la vez</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/teoria-de-numeros.html">Teoría de números</a><a class="tag" href="../temas/ecuacion-de-pell.html">Ecuación de Pell</a></div>
+<p>Mostrar que existen infinitos naturales \(n\) tales que \(2n+1\) y \(3n+1\) son cuadrados perfectos, y que todos esos \(n\) son múltiplos de \(40\).</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Escribí \(2n+1=a^2\), \(3n+1=b^2\) y eliminá \(n\). Para la divisibilidad, mirá módulo \(8\) y módulo \(5\).</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p><strong>Infinitos.</strong> Si \(2n+1=a^2\) y \(3n+1=b^2\), eliminando \(n\) queda \(3a^2-2b^2=1\). Recíprocamente, si \(3a^2-2b^2=1\), entonces \(a\) es impar, \(n=\frac{a^2-1}{2}\) es natural y \(3n+1=\frac{3a^2-1}{2}=b^2\). Basta ver que la ecuación tiene infinitas soluciones. Un cálculo directo muestra
+          \[ 3(5a+4b)^2-2(6a+5b)^2=3a^2-2b^2, \]
+          así que \((a,b)\mapsto(5a+4b,\,6a+5b)\) lleva soluciones en soluciones, estrictamente mayores. Partiendo de \((1,1)\) se obtiene \((9,11)\), \((89,109)\), \((881,1079)\), …, es decir \(n=40,\ 3960,\ 388080,\dots\)</p>
+<p><strong>Múltiplos de 8.</strong> Todo cuadrado impar es \(\equiv 1 \pmod 8\). Como \(2n+1\) es un cuadrado impar, \(8\mid 2n\), así que \(n\) es par; entonces \(3n+1\) también es un cuadrado impar y \(8\mid 3n\), es decir \(8\mid n\).</p>
+<p><strong>Múltiplos de 5.</strong> Los cuadrados módulo \(5\) son \(0,1,4\). Como \((2n+1)+(3n+1)=5n+2\equiv 2\), y la única forma de obtener \(2\) sumando dos cuadrados módulo \(5\) es \(1+1\), debe ser \(2n+1\equiv1\), o sea \(5\mid n\). En total, \(40\mid n\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="suma-de-cosenos-pi-13.html">← N.º 11: Una suma de cosenos</a><a class="sig" href="numero-triangular-doble-de-otro.html">N.º 13: Un triangular doble de otro →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="numero-triangular-doble-de-otro.html">N.º 13 · Un triangular doble de otro</a> <span class="dif">★★</span></li><li><a href="suma-de-cosenos-pi-13.html">N.º 11 · Una suma de cosenos</a> <span class="dif">★★★</span></li><li><a href="mcd-de-los-binomiales-impares.html">N.º 14 · El MCD de los binomiales impares</a> <span class="dif">★★</span></li><li><a href="polinomio-inyectivo-en-los-racionales.html">N.º 8 · Inyectivo en los racionales, no en los reales</a> <span class="dif">★★</span></li><li><a href="suma-divisible-por-n.html">N.º 21 · Una suma divisible por \(n\)</a> <span class="dif">★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
