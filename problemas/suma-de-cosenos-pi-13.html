@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cos(π/13) + cos(3π/13) + cos(9π/13) = (1+√13)/4 | Problemas Interesantes</title>
+<meta name="description" content="Demostrar la identidad cos(π/13)+cos(3π/13)+cos(9π/13) = (1+√13)/4 usando raíces 13-ésimas de la unidad. Problema difícil, con pista y solución.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/suma-de-cosenos-pi-13.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cos(π/13) + cos(3π/13) + cos(9π/13) = (1+√13)/4 | Problemas Interesantes">
+<meta property="og:description" content="Demostrar la identidad cos(π/13)+cos(3π/13)+cos(9π/13) = (1+√13)/4 usando raíces 13-ésimas de la unidad. Problema difícil, con pista y solución.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/suma-de-cosenos-pi-13.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "cos(π/13) + cos(3π/13) + cos(9π/13) = (1+√13)/4", "headline": "cos(π/13) + cos(3π/13) + cos(9π/13) = (1+√13)/4", "description": "Demostrar la identidad cos(π/13)+cos(3π/13)+cos(9π/13) = (1+√13)/4 usando raíces 13-ésimas de la unidad. Problema difícil, con pista y solución.", "url": "https://problemas-interesantes.github.io/problemas/suma-de-cosenos-pi-13.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "difícil", "about": [{"@type": "Thing", "name": "Trigonometría"}, {"@type": "Thing", "name": "Teoría de números"}, {"@type": "Thing", "name": "Raíces de la unidad"}], "keywords": "Trigonometría, Teoría de números, Raíces de la unidad, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Trigonometría", "item": "https://problemas-interesantes.github.io/temas/trigonometria.html"}, {"@type": "ListItem", "position": 3, "name": "cos(π/13) + cos(3π/13) + cos(9π/13) = (1+√13)/4"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/trigonometria.html">Trigonometría</a> › Problema N.º 11</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 11</span>
+<h1 class="ptitle">Una suma de cosenos</h1>
+<span class="dif" title="Dificultad">★★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/trigonometria.html">Trigonometría</a><a class="tag" href="../temas/teoria-de-numeros.html">Teoría de números</a><a class="tag" href="../temas/raices-de-la-unidad.html">Raíces de la unidad</a></div>
+<p>Demostrar que
+      \[ \cos\frac{\pi}{13}+\cos\frac{3\pi}{13}+\cos\frac{9\pi}{13}=\frac{1+\sqrt{13}}{4}. \]</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Pasá a ángulos de la forma \(2\pi k/13\) y separá los \(k\) según sean o no cuadrados módulo \(13\). Las dos sumas que aparecen tienen suma y producto fáciles de calcular.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Como \(\cos(\pi-x)=-\cos x\), la suma pedida es \(S=-T\), con
+          \[ T=\cos\frac{4\pi}{13}+\cos\frac{10\pi}{13}+\cos\frac{12\pi}{13}. \]
+          Sea \(\zeta=e^{2\pi i/13}\). Los restos cuadráticos no nulos módulo \(13\) son \(R=\{1,3,4,9,10,12\}\) y los no restos \(N=\{2,5,6,7,8,11\}\). Como \(-1\equiv 12\) es resto, ambos conjuntos son simétricos (\(x\leftrightarrow -x\)), así que
+          \[ \eta_0=\sum_{r\in R}\zeta^r=2\Big(\cos\tfrac{2\pi}{13}+\cos\tfrac{6\pi}{13}+\cos\tfrac{8\pi}{13}\Big),\qquad
+             \eta_1=\sum_{s\in N}\zeta^s=2T. \]</p>
+<p><strong>Suma.</strong> \(\eta_0+\eta_1=\zeta+\zeta^2+\dots+\zeta^{12}=-1\).</p>
+<p><strong>Producto.</strong> \(\eta_0\eta_1=\sum_{r\in R,\,s\in N}\zeta^{r+s}\): son \(36\) términos y nunca \(r+s\equiv 0\) (porque \(-r\in R\)). Para \(c\not\equiv 0\) sea \(M(c)\) el número de pares \((r,s)\in R\times N\) con \(r+s\equiv c\). Si \(q\in R\), la biyección \((r,s)\mapsto(qr,qs)\) muestra \(M(qc)=M(c)\); si \(m\in N\), la biyección \((r,s)\mapsto(ms,mr)\) (de nuevo un par en \(R\times N\)) muestra \(M(mc)=M(c)\). Luego \(M\) es constante, igual a \(36/12=3\), y
+          \[ \eta_0\eta_1=3(\zeta+\dots+\zeta^{12})=-3. \]</p>
+<p>Así \(\eta_0,\eta_1\) son las raíces de \(x^2+x-3=0\), es decir \(\frac{-1\pm\sqrt{13}}{2}\). Para decidir cuál es cuál: \(\cos\frac{4\pi}{13}+\cos\frac{12\pi}{13}=2\cos\frac{8\pi}{13}\cos\frac{4\pi}{13}&lt;0\) (pues \(\frac{8\pi}{13}&gt;\frac{\pi}{2}\)) y \(\cos\frac{10\pi}{13}&lt;0\), luego \(T&lt;0\). Por lo tanto \(\eta_1=\frac{-1-\sqrt{13}}{2}\), \(T=\frac{-1-\sqrt{13}}{4}\) y
+          \[ S=-T=\frac{1+\sqrt{13}}{4}. \]</p>
+<p><em>Comentario.</em> \(\eta_0,\eta_1\) son los <em>períodos de Gauss</em> de orden \(2\) para \(p=13\); la identidad equivale a \(\eta_0-\eta_1=\sqrt{13}\), un caso de la suma de Gauss cuadrática.</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="determinante-de-vandermonde.html">← N.º 10: Un determinante</a><a class="sig" href="2n-mas-1-y-3n-mas-1-cuadrados.html">N.º 12: Dos cuadrados a la vez →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="2n-mas-1-y-3n-mas-1-cuadrados.html">N.º 12 · Dos cuadrados a la vez</a> <span class="dif">★★</span></li><li><a href="divisibilidad-de-polinomios.html">N.º 9 · Divisibilidad de polinomios</a> <span class="dif">★★</span></li><li><a href="numero-triangular-doble-de-otro.html">N.º 13 · Un triangular doble de otro</a> <span class="dif">★★</span></li><li><a href="polinomio-inyectivo-en-los-racionales.html">N.º 8 · Inyectivo en los racionales, no en los reales</a> <span class="dif">★★</span></li><li><a href="mcd-de-los-binomiales-impares.html">N.º 14 · El MCD de los binomiales impares</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

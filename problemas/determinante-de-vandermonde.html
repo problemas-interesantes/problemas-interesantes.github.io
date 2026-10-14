@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un determinante de Vandermonde: x^((r−1)(s−1)) | Problemas Interesantes</title>
+<meta name="description" content="Calcular el determinante de la matriz n×n de entradas x^((r−1)(s−1)). Ejercicio de álgebra lineal con el determinante de Vandermonde, resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/determinante-de-vandermonde.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Un determinante de Vandermonde: x^((r−1)(s−1)) | Problemas Interesantes">
+<meta property="og:description" content="Calcular el determinante de la matriz n×n de entradas x^((r−1)(s−1)). Ejercicio de álgebra lineal con el determinante de Vandermonde, resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/determinante-de-vandermonde.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Un determinante de Vandermonde: x^((r−1)(s−1))", "headline": "Un determinante de Vandermonde: x^((r−1)(s−1))", "description": "Calcular el determinante de la matriz n×n de entradas x^((r−1)(s−1)). Ejercicio de álgebra lineal con el determinante de Vandermonde, resuelto.", "url": "https://problemas-interesantes.github.io/problemas/determinante-de-vandermonde.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Álgebra lineal"}, {"@type": "Thing", "name": "Vandermonde"}], "keywords": "Álgebra lineal, Vandermonde, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Álgebra lineal", "item": "https://problemas-interesantes.github.io/temas/algebra-lineal.html"}, {"@type": "ListItem", "position": 3, "name": "Un determinante de Vandermonde: x^((r−1)(s−1))"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/algebra-lineal.html">Álgebra lineal</a> › Problema N.º 10</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 10</span>
+<h1 class="ptitle">Un determinante</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/algebra-lineal.html">Álgebra lineal</a><span class="tag">Vandermonde</span></div>
+<p>Calcular el determinante de la matriz \(n\times n\) de entradas \(A_{rs}(x)=x^{(r-1)(s-1)}\), \(r,s=1,\dots,n\).</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Escribí \(x^{(r-1)(s-1)}=\big(x^{r-1}\big)^{s-1}\). ¿Qué matriz conocida es?</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Es la matriz de Vandermonde en los nodos \(1,x,\dots,x^{n-1}\). Entonces
+          \[ \det A=\prod_{0\le i&lt;j\le n-1}\big(x^j-x^i\big)=\prod_{0\le i&lt;j\le n-1}x^i\big(x^{j-i}-1\big). \]
+          El exponente total de \(x\) es \(\sum_{i=0}^{n-1}i(n-1-i)=\binom n3\), y agrupando por \(k=j-i\):
+          \[ \det A=x^{\binom n3}\prod_{k=1}^{n-1}\big(x^k-1\big)^{\,n-k}. \]
+          Para \(n=2\) da \(x-1\); para \(n=3\), \(x(x-1)^2(x^2-1)\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="divisibilidad-de-polinomios.html">← N.º 9: Divisibilidad de polinomios</a><a class="sig" href="suma-de-cosenos-pi-13.html">N.º 11: Una suma de cosenos →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="determinante-por-bloques.html">N.º 17 · Un determinante por bloques</a> <span class="dif">★</span></li><li><a href="determinante-a-arriba-b-abajo.html">N.º 18 · Arriba \(a\), abajo \(b\)</a> <span class="dif">★★</span></li><li><a href="raices-de-la-unidad-y-una-columna-de-unos.html">N.º 19 · Raíces de la unidad y una columna de unos</a> <span class="dif">★★</span></li><li><a href="determinante-de-cauchy-y-de-hilbert.html">N.º 20 · Los determinantes de Cauchy y de Hilbert</a> <span class="dif">★★</span></li><li><a href="matriz-ceros-en-la-diagonal-y-unos.html">N.º 24 · Ceros en la diagonal, \(\pm1\) fuera de ella</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

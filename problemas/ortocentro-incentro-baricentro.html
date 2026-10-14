@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Construir un triángulo con ortocentro, incentro y baricentro dados | Problemas Interesantes</title>
+<meta name="description" content="Construcción con regla y compás de un triángulo con ortocentro H, baricentro G e incentro en el punto medio de GH. Problema difícil resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/ortocentro-incentro-baricentro.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Construir un triángulo con ortocentro, incentro y baricentro dados | Problemas Interesantes">
+<meta property="og:description" content="Construcción con regla y compás de un triángulo con ortocentro H, baricentro G e incentro en el punto medio de GH. Problema difícil resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/ortocentro-incentro-baricentro.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Construir un triángulo con ortocentro, incentro y baricentro dados", "headline": "Construir un triángulo con ortocentro, incentro y baricentro dados", "description": "Construcción con regla y compás de un triángulo con ortocentro H, baricentro G e incentro en el punto medio de GH. Problema difícil resuelto.", "url": "https://problemas-interesantes.github.io/problemas/ortocentro-incentro-baricentro.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "difícil", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Construcciones con regla y compás"}], "keywords": "Geometría, Construcciones con regla y compás, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "Construir un triángulo con ortocentro, incentro y baricentro dados"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 34</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 34</span>
+<h1 class="ptitle">Ortocentro, incentro y baricentro</h1>
+<span class="dif" title="Dificultad">★★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><span class="tag">Construcciones con regla y compás</span></div>
+<p>Dados dos puntos distintos \(G\) y \(H\), sea \(I\) el punto medio del segmento \(GH\). Construir con regla y compás un triángulo \(ABC\) que tenga \(H\) por ortocentro, \(I\) por incentro y \(G\) por baricentro.</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>El incentro está en la recta de Euler. Eso obliga al triángulo a ser isósceles. Después, una cuenta en coordenadas.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p><strong>1. El triángulo es isósceles.</strong> Sea \(O\) el circuncentro. Como \(G\ne H\), el triángulo no es equilátero, y \(I\) está en la recta de Euler \(OGH\). Las rectas \(AO\) y \(AH\) son isogonales respecto del ángulo \(A\), así que la bisectriz \(AI\) también es bisectriz del ángulo \(OAH\). Si \(A,O,H\) no están alineados, la bisectriz corta a \(OH\) en el punto que lo divide en la razón \(AO:AH\), y ese punto es \(I\). Luego \(OI:IH=R:AH\).<br/>
+          Si esto valiera para los tres vértices, tendríamos \(AH=BH=CH\), así que \(H=O\) y el triángulo sería equilátero, cosa que excluimos. Entonces para algún vértice, digamos \(A\), los puntos \(A,O,H\) están alineados: la altura desde \(A\) pasa por \(O\) y \(AB=AC\).</p>
+<p><strong>2. La forma.</strong> Pongamos \(M\), el punto medio de \(BC\), en el origen, con \(B=(-1,0)\), \(C=(1,0)\) y \(A=(0,h)\), y sea \(\ell=AB=\sqrt{1+h^2}\). Entonces \(G=(0,\frac h3)\). La semejanza de los triángulos \(BMH\) y \(AMB\) da \(MH\cdot MA=MB^2\), así que \(H=(0,\frac1h)\). El inradio es \(r=\frac{\text{área}}{s}=\frac{h}{1+\ell}\). La condición \(r=\frac12\big(\frac h3+\frac1h\big)\) es
+          \[ \frac{h}{1+\ell}=\frac{h^2+3}{6h}\iff 6(\ell^2-1)=(\ell^2+2)(1+\ell)\iff \ell^2-6\ell+8=0, \]
+          con raíces \(\ell=2\) (el equilátero, descartado) y \(\ell=4\).<br/>
+<strong>Respuesta:</strong> el triángulo es isósceles con lados proporcionales a \(4,4,2\) (los lados iguales miden el doble que la base). Es único.</p>
+<p><strong>3. La construcción.</strong> Con \(h=\sqrt{15}\), sobre el eje tenemos \(MH=\frac1{\sqrt{15}}\), \(MG=\frac5{\sqrt{15}}\) y \(MA=\frac{15}{\sqrt{15}}\). Si \(GH=g\):<br/>
+          • \(M\) está sobre la recta \(GH\), más allá de \(H\), con \(HM=g/4\);<br/>
+          • \(A\) está sobre la misma recta, más allá de \(G\), con \(GA=2\,GM=\frac{5g}{2}\);<br/>
+          • \(B\) y \(C\) están en la perpendicular por \(M\), con \(MB=MC=\sqrt{MH\cdot MA}\). Para construirlos, sea \(H'\) el simétrico de \(H\) respecto de \(M\): la circunferencia de diámetro \(AH'\) (que es la circunscripta) corta a esa perpendicular en \(B\) y \(C\).</p>
+<p><em>Control:</em> con \(B=(-1,0)\), \(C=(1,0)\) y \(A=(0,\sqrt{15})\) se obtiene \(r=\frac{\sqrt{15}}5\), y el punto medio de \(G=(0,\frac{\sqrt{15}}3)\) y \(H=(0,\frac1{\sqrt{15}})\) es \(\big(0,\frac{\sqrt{15}}{5}\big)\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="nudo-pentagonal.html">← N.º 33: El nudo pentagonal</a><a class="sig" href="triangulos-semejantes-inscriptos.html">N.º 35: Triángulos semejantes inscriptos →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="nudo-pentagonal.html">N.º 33 · El nudo pentagonal</a> <span class="dif">★★</span></li><li><a href="triangulos-semejantes-inscriptos.html">N.º 35 · Triángulos semejantes inscriptos</a> <span class="dif">★★</span></li><li><a href="reconstruir-un-poligono.html">N.º 32 · Reconstruir un polígono</a> <span class="dif">★★</span></li><li><a href="triangulos-equilateros-sobre-los-lados.html">N.º 36 · Triángulos equiláteros sobre los lados</a> <span class="dif">★★★</span></li><li><a href="suma-de-distancias-a-los-lados.html">N.º 31 · Suma de distancias a los lados</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

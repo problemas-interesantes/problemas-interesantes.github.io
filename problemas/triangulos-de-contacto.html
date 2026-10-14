@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Área del triángulo de contacto del incírculo y del excírculo | Problemas Interesantes</title>
+<meta name="description" content="Probar que el área del triángulo es 2R/r veces la del triángulo de contacto del incírculo, y 2R/r_a la del excírculo. Problema de geometría resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/triangulos-de-contacto.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Área del triángulo de contacto del incírculo y del excírculo | Problemas Interesantes">
+<meta property="og:description" content="Probar que el área del triángulo es 2R/r veces la del triángulo de contacto del incírculo, y 2R/r_a la del excírculo. Problema de geometría resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/triangulos-de-contacto.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Área del triángulo de contacto del incírculo y del excírculo", "headline": "Área del triángulo de contacto del incírculo y del excírculo", "description": "Probar que el área del triángulo es 2R/r veces la del triángulo de contacto del incírculo, y 2R/r_a la del excírculo. Problema de geometría resuelto.", "url": "https://problemas-interesantes.github.io/problemas/triangulos-de-contacto.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Trigonometría"}], "keywords": "Geometría, Trigonometría, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "Área del triángulo de contacto del incírculo y del excírculo"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 37</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 37</span>
+<h1 class="ptitle">Los triángulos de contacto</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><a class="tag" href="../temas/trigonometria.html">Trigonometría</a></div>
+<p>Sea \(ABC\) un triángulo con circunradio \(R\), inradio \(r\) y radio \(r_a\) del excírculo opuesto a \(A\). Probar que
+      \[ \frac{\text{área de }ABC}{\text{área del triángulo cuyos vértices son los puntos de tangencia del incírculo}}=\frac{2R}{r}, \]
+      \[ \frac{\text{área de }ABC}{\text{área del triángulo cuyos vértices son los puntos de tangencia del excírculo en }A}=\frac{2R}{r_a}. \]</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Partí el triángulo de contacto en tres triángulos con vértice en el centro del círculo. ¿Cuánto valen los ángulos en ese centro?</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Usaremos \(\operatorname{sen}A=\frac{a}{2R}\) (teorema del seno), \(\text{área}(ABC)=rs=r_a(s-a)\), con \(s\) el semiperímetro, y que un triángulo con dos lados \(\rho\) que forman un ángulo \(\varphi\) tiene área \(\frac12\rho^2\operatorname{sen}\varphi\).</p>
+<p><strong>Incírculo.</strong> Sean \(D,E,F\) los puntos de tangencia en \(BC,CA,AB\). El cuadrilátero \(AEIF\) tiene ángulos rectos en \(E\) y \(F\), así que \(\angle EIF=180^\circ-A\); análogamente para los otros. Como \(I\) es interior a \(DEF\),
+          \[ \text{área}(DEF)=\tfrac12r^2\big(\operatorname{sen}A+\operatorname{sen}B+\operatorname{sen}C\big)=\tfrac12r^2\,\frac{a+b+c}{2R}=\frac{r^2s}{2R}. \]
+          Dividiendo, \(\dfrac{rs}{r^2s/2R}=\dfrac{2R}{r}\).</p>
+<p><strong>Excírculo en \(A\).</strong> Sean \(I_a\) su centro y \(D',E',F'\) los puntos de tangencia con \(BC\) y con las prolongaciones de \(AC\) y \(AB\). Ahora \(\angle E'I_aF'=180^\circ-A\). El cuadrilátero \(CD'I_aE'\) tiene ángulos rectos en \(D'\) y \(E'\) y ángulo \(180^\circ-C\) en \(C\), así que \(\angle D'I_aE'=C\); análogamente \(\angle D'I_aF'=B\).<br/>
+          Como \(B+C=180^\circ-A\), la semirrecta \(I_aD'\) está dentro del ángulo \(E'I_aF'\), y el centro \(I_a\) queda <em>fuera</em> del triángulo \(D'E'F'\). Por eso
+          \[ \text{área}(D'E'F')=\tfrac12r_a^2\big(\operatorname{sen}B+\operatorname{sen}C-\operatorname{sen}A\big)=\tfrac12r_a^2\,\frac{b+c-a}{2R}=\frac{r_a^2(s-a)}{2R}. \]
+          Dividiendo, \(\dfrac{r_a(s-a)}{r_a^2(s-a)/2R}=\dfrac{2R}{r_a}\).</p>
+<p><em>Comentario:</em> la segunda fórmula es la primera con el cambio \(r\to r_a\), \(s\to s-a\) y \(\operatorname{sen}A\to-\operatorname{sen}A\). Es un ejemplo del principio de que las fórmulas del incírculo «pasan» a los excírculos cambiando signos.</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="triangulos-equilateros-sobre-los-lados.html">← N.º 36: Triángulos equiláteros sobre los lados</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="teorema-de-descartes-cuatro-circulos.html">N.º 30 · Cuatro círculos tangentes</a> <span class="dif">★★★</span></li><li><a href="triangulos-equilateros-sobre-los-lados.html">N.º 36 · Triángulos equiláteros sobre los lados</a> <span class="dif">★★★</span></li><li><a href="triangulos-semejantes-inscriptos.html">N.º 35 · Triángulos semejantes inscriptos</a> <span class="dif">★★</span></li><li><a href="ortocentro-incentro-baricentro.html">N.º 34 · Ortocentro, incentro y baricentro</a> <span class="dif">★★★</span></li><li><a href="nudo-pentagonal.html">N.º 33 · El nudo pentagonal</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

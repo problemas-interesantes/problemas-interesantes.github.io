@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio de la esfera inscripta en un símplex de R^n | Problemas Interesantes</title>
+<meta name="description" content="Fórmula para el radio de la esfera inscripta en el símplex de R^n limitado por los hiperplanos coordenados y Σ x_i/a_i = 1. Problema resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/esfera-inscripta-en-un-simplex.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Radio de la esfera inscripta en un símplex de R^n | Problemas Interesantes">
+<meta property="og:description" content="Fórmula para el radio de la esfera inscripta en el símplex de R^n limitado por los hiperplanos coordenados y Σ x_i/a_i = 1. Problema resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/esfera-inscripta-en-un-simplex.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Radio de la esfera inscripta en un símplex de R^n", "headline": "Radio de la esfera inscripta en un símplex de R^n", "description": "Fórmula para el radio de la esfera inscripta en el símplex de R^n limitado por los hiperplanos coordenados y Σ x_i/a_i = 1. Problema resuelto.", "url": "https://problemas-interesantes.github.io/problemas/esfera-inscripta-en-un-simplex.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "accesible", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Geometría en dimensión n"}], "keywords": "Geometría, Geometría en dimensión n, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "Radio de la esfera inscripta en un símplex de R^n"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 28</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 28</span>
+<h1 class="ptitle">La esfera inscripta en un símplex</h1>
+<span class="dif" title="Dificultad">★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><span class="tag">Geometría en dimensión n</span></div>
+<p>Sean \(a_1,a_2,\dots,a_n&gt;0\). Probar que el radio \(r\) de la «esfera» inscripta en el poliedro acotado de \(\mathbb{R}^n\) limitado por los hiperplanos \(x_1=0,\ x_2=0,\ \dots,\ x_n=0\) y \(\displaystyle\sum_{i=1}^n\frac{x_i}{a_i}=1\) verifica
+      \[ \frac1r=\sum_{k=1}^n\frac1{a_k}+\sqrt{\sum_{k=1}^n\frac1{a_k^2}}. \]</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>¿Dónde tiene que estar el centro, si la esfera es tangente a todos los hiperplanos coordenados?</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>El poliedro es el símplex \(\{x_i\ge0,\ \sum x_i/a_i\le1\}\). Si la esfera de centro \(c\) y radio \(r\) está dentro de él y es tangente al hiperplano \(x_i=0\), la distancia de \(c\) a ese hiperplano es \(c_i=r\). Luego \(c=(r,r,\dots,r)\).</p>
+<p>Escribamos \(S_1=\sum 1/a_k\) y \(S_2=\sum 1/a_k^2\). La distancia de \(c\) al hiperplano \(\sum x_i/a_i=1\) es
+          \[ \frac{\left|\,\sum r/a_i-1\,\right|}{\sqrt{S_2}}=\frac{1-rS_1}{\sqrt{S_2}}, \]
+          donde sacamos el valor absoluto porque \(c\) está del lado del origen (\(rS_1&lt;1\)). Igualando a \(r\): \(1-rS_1=r\sqrt{S_2}\), es decir, \(\dfrac1r=S_1+\sqrt{S_2}\).</p>
+<p><em>Control:</em> para \(n=2\) es un triángulo rectángulo de catetos \(a,b\) e hipotenusa \(c=\sqrt{a^2+b^2}\), y la fórmula da \(\frac1r=\frac{a+b+c}{ab}\), que es la conocida \(r=\frac{\text{área}}{\text{semiperímetro}}\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="promedios-de-1-sobre-1-mas-x.html">← N.º 27: Promedios de \(\frac{1}{1+x}\)</a><a class="sig" href="triangulo-20-80-80.html">N.º 29: Un triángulo de 20°, 80° y 80° →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="triangulo-20-80-80.html">N.º 29 · Un triángulo de 20°, 80° y 80°</a> <span class="dif">★★★</span></li><li><a href="teorema-de-descartes-cuatro-circulos.html">N.º 30 · Cuatro círculos tangentes</a> <span class="dif">★★★</span></li><li><a href="suma-de-distancias-a-los-lados.html">N.º 31 · Suma de distancias a los lados</a> <span class="dif">★★</span></li><li><a href="reconstruir-un-poligono.html">N.º 32 · Reconstruir un polígono</a> <span class="dif">★★</span></li><li><a href="nudo-pentagonal.html">N.º 33 · El nudo pentagonal</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

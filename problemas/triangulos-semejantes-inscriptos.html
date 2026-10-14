@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lugar geométrico de baricentros de triángulos semejantes inscriptos | Problemas Interesantes</title>
+<meta name="description" content="Lugar de los baricentros de los triángulos semejantes a uno dado e inscriptos en otro triángulo. Geometría con números complejos, resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/triangulos-semejantes-inscriptos.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lugar geométrico de baricentros de triángulos semejantes inscriptos | Problemas Interesantes">
+<meta property="og:description" content="Lugar de los baricentros de los triángulos semejantes a uno dado e inscriptos en otro triángulo. Geometría con números complejos, resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/triangulos-semejantes-inscriptos.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Lugar geométrico de baricentros de triángulos semejantes inscriptos", "headline": "Lugar geométrico de baricentros de triángulos semejantes inscriptos", "description": "Lugar de los baricentros de los triángulos semejantes a uno dado e inscriptos en otro triángulo. Geometría con números complejos, resuelto.", "url": "https://problemas-interesantes.github.io/problemas/triangulos-semejantes-inscriptos.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Lugares geométricos"}, {"@type": "Thing", "name": "Números complejos"}], "keywords": "Geometría, Lugares geométricos, Números complejos, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "Lugar geométrico de baricentros de triángulos semejantes inscriptos"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 35</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 35</span>
+<h1 class="ptitle">Triángulos semejantes inscriptos</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><span class="tag">Lugares geométricos</span><a class="tag" href="../temas/numeros-complejos.html">Números complejos</a></div>
+<p>Hallar el lugar geométrico de los baricentros de los triángulos semejantes a uno dado e inscriptos en otro triángulo dado (con un vértice en cada lado).</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Contá ecuaciones e incógnitas: la condición de semejanza es <em>lineal</em> en las posiciones de los vértices.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Sea \(ABC\) el triángulo dado y \(UVW\) el modelo. Fijemos una correspondencia, por ejemplo \(P\in BC\), \(Q\in CA\), \(R\in AB\) con \(P\leftrightarrow U\), \(Q\leftrightarrow V\), \(R\leftrightarrow W\), y una orientación. Usando números complejos, escribimos
+          \[ P=B+s(C-B),\qquad Q=C+t(A-C),\qquad R=A+u(B-A),\qquad s,t,u\in[0,1]. \]
+          Que \(PQR\) sea directamente semejante a \(UVW\) es la ecuación \(Q-P=\lambda\,(R-P)\), con \(\lambda=\frac{V-U}{W-U}\) fijo.</p>
+<p>Es <em>una</em> ecuación compleja, o sea dos ecuaciones reales, <em>lineales</em> en las tres incógnitas reales \(s,t,u\). Salvo para una forma excepcional del modelo (ver abajo), el rango es \(2\), y las soluciones forman una recta \((s,t,u)=(s_0,t_0,u_0)+\tau\,(s',t',u')\) de \(\mathbb{R}^3\).</p>
+<p>El baricentro \(\frac{P+Q+R}{3}\) depende de manera afín de \(\tau\), así que recorre una recta. Al pedir \(s,t,u\in[0,1]\), queda un <strong>segmento</strong>.</p>
+<p><strong>Respuesta:</strong> para cada manera de asignar los vértices a los lados y cada orientación, el lugar es un segmento. El lugar completo es la unión de esos segmentos (a lo sumo \(6\) si sólo se admiten semejanzas directas, a lo sumo \(12\) si también las inversas).</p>
+<p><em>Casos excepcionales.</em> El rango baja a \(1\) cuando los tres coeficientes son paralelos. Eso pasa sólo si el modelo es <em>inversamente</em> semejante a \(ABC\) con la correspondencia \(U\leftrightarrow A\), \(V\leftrightarrow B\), \(W\leftrightarrow C\), y en ese caso el sistema es incompatible: no hay ningún triángulo inscripto de esa forma. Por otro lado, el segmento se reduce a un punto cuando la «velocidad» del baricentro se anula, y eso pasa exactamente cuando el modelo es semejante, con la correspondencia adecuada, al triángulo formado por las tres medianas de \(ABC\).</p>
+<p><em>Comentario:</em> todos los triángulos de una misma familia tienen el mismo punto de Miquel \(M\), y se obtienen unos de otros por semejanzas en espiral de centro \(M\). Eso da otra manera de ver que el baricentro se mueve sobre una recta.</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="ortocentro-incentro-baricentro.html">← N.º 34: Ortocentro, incentro y baricentro</a><a class="sig" href="triangulos-equilateros-sobre-los-lados.html">N.º 36: Triángulos equiláteros sobre los lados →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="triangulos-equilateros-sobre-los-lados.html">N.º 36 · Triángulos equiláteros sobre los lados</a> <span class="dif">★★★</span></li><li><a href="ortocentro-incentro-baricentro.html">N.º 34 · Ortocentro, incentro y baricentro</a> <span class="dif">★★★</span></li><li><a href="nudo-pentagonal.html">N.º 33 · El nudo pentagonal</a> <span class="dif">★★</span></li><li><a href="triangulos-de-contacto.html">N.º 37 · Los triángulos de contacto</a> <span class="dif">★★</span></li><li><a href="reconstruir-un-poligono.html">N.º 32 · Reconstruir un polígono</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

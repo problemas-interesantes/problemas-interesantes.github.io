@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integral del valor absoluto de un polinomio y sus coeficientes | Problemas Interesantes</title>
+<meta name="description" content="Probar que la integral de |p(t)| entre 0 y 1 está acotada por π/2 por la norma de los coeficientes. Desigualdad de Cauchy–Schwarz, con solución.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/integral-de-un-polinomio-y-sus-coeficientes.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Integral del valor absoluto de un polinomio y sus coeficientes | Problemas Interesantes">
+<meta property="og:description" content="Probar que la integral de |p(t)| entre 0 y 1 está acotada por π/2 por la norma de los coeficientes. Desigualdad de Cauchy–Schwarz, con solución.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/integral-de-un-polinomio-y-sus-coeficientes.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Integral del valor absoluto de un polinomio y sus coeficientes", "headline": "Integral del valor absoluto de un polinomio y sus coeficientes", "description": "Probar que la integral de |p(t)| entre 0 y 1 está acotada por π/2 por la norma de los coeficientes. Desigualdad de Cauchy–Schwarz, con solución.", "url": "https://problemas-interesantes.github.io/problemas/integral-de-un-polinomio-y-sus-coeficientes.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Desigualdades"}, {"@type": "Thing", "name": "Cauchy–Schwarz"}], "keywords": "Desigualdades, Cauchy–Schwarz, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Desigualdades", "item": "https://problemas-interesantes.github.io/temas/desigualdades.html"}, {"@type": "ListItem", "position": 3, "name": "Integral del valor absoluto de un polinomio y sus coeficientes"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/desigualdades.html">Desigualdades</a> › Problema N.º 4</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 4</span>
+<h1 class="ptitle">La integral de un polinomio y sus coeficientes</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/desigualdades.html">Desigualdades</a><span class="tag">Cauchy–Schwarz</span></div>
+<p>Sea \(p(t)=a_0+a_1t+\dots+a_nt^n\) un polinomio de coeficientes reales. Probar que
+      \[ \int_0^1 |p(t)|\,dt \;\le\; \frac{\pi}{2}\sqrt{a_0^2+a_1^2+\dots+a_n^2}. \]
+      Generalizar.</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Acotá \(|p(t)|\) punto a punto con Cauchy–Schwarz. ¿Qué integral conocida vale \(\pi/2\)?</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Para \(0\le t&lt;1\), por Cauchy–Schwarz,
+          \[ |p(t)| \le \Big(\sum_k a_k^2\Big)^{1/2}\Big(\sum_{k=0}^n t^{2k}\Big)^{1/2}
+             \le \|a\|\Big(\sum_{k\ge0} t^{2k}\Big)^{1/2} = \frac{\|a\|}{\sqrt{1-t^2}}. \]
+          Integrando, \(\displaystyle\int_0^1 |p| \le \|a\|\int_0^1\frac{dt}{\sqrt{1-t^2}} = \frac{\pi}{2}\|a\|.\)</p>
+<p><strong>Generalización.</strong> El mismo argumento vale para series \(\sum a_kt^k\) con \(\sum a_k^2&lt;\infty\).</p>
+<p><em>Para seguir pensando:</em> ¿qué cota se obtiene usando la desigualdad de Hölder en lugar de Cauchy–Schwarz, con \(\|a\|_p=\big(\sum|a_k|^p\big)^{1/p}\)?</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Con \(\tfrac1p+\tfrac1q=1\), acotá \(\sum t^{qk}\) por la serie geométrica y, en la integral que queda, hacé el cambio \(u=t^q\): aparece la función Beta.</p></div>
+</details>
+<details class="mas">
+<summary>Respuesta</summary>
+<div class="answer">
+<p>Para \(1&lt;q&lt;\infty\),
+              \[ \int_0^1 |p(t)|\,dt \le \|a\|_p\int_0^1 (1-t^q)^{-1/q}\,dt = \|a\|_p\,\frac{\pi/q}{\sin(\pi/q)}. \]
+              Para \(q=2\) se recupera \(\pi/2\).</p>
+</div>
+</details>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="irracional-elevado-a-irracional.html">← N.º 3: Irracional elevado a irracional</a><a class="sig" href="acotando-e.html">N.º 5: Acotando \(e\) →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="acotando-e.html">N.º 5 · Acotando \(e\)</a> <span class="dif">★★</span></li><li><a href="producto-de-sen-x-sobre-x.html">N.º 23 · Un producto de \(\frac{\operatorname{sen} x}{x}\)</a> <span class="dif">★★</span></li><li><a href="cadena-de-desigualdades.html">N.º 25 · Una cadena de desigualdades</a> <span class="dif">★★</span></li><li><a href="promedios-de-1-sobre-1-mas-x.html">N.º 27 · Promedios de \(\frac{1}{1+x}\)</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

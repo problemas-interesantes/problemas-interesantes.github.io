@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reconstruir un polígono a partir de los puntos medios de sus lados | Problemas Interesantes</title>
+<meta name="description" content="Construir un n-gono conociendo los puntos medios de sus lados, las mediatrices o los baricentros. Problema de geometría y transformaciones, resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/reconstruir-un-poligono.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reconstruir un polígono a partir de los puntos medios de sus lados | Problemas Interesantes">
+<meta property="og:description" content="Construir un n-gono conociendo los puntos medios de sus lados, las mediatrices o los baricentros. Problema de geometría y transformaciones, resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/reconstruir-un-poligono.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Reconstruir un polígono a partir de los puntos medios de sus lados", "headline": "Reconstruir un polígono a partir de los puntos medios de sus lados", "description": "Construir un n-gono conociendo los puntos medios de sus lados, las mediatrices o los baricentros. Problema de geometría y transformaciones, resuelto.", "url": "https://problemas-interesantes.github.io/problemas/reconstruir-un-poligono.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Transformaciones"}, {"@type": "Thing", "name": "Álgebra lineal"}], "keywords": "Geometría, Transformaciones, Álgebra lineal, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "Reconstruir un polígono a partir de los puntos medios de sus lados"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 32</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 32</span>
+<h1 class="ptitle">Reconstruir un polígono</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><span class="tag">Transformaciones</span><a class="tag" href="../temas/algebra-lineal.html">Álgebra lineal</a></div>
+<p>a) Construir un \(n\)-gono (plano o alabeado), \(n\ge3\), conociendo los puntos medios de sus lados.</p>
+<p>b) Construir un \(n\)-gono plano conociendo las mediatrices de sus lados.</p>
+<p>c) Construir un \(n\)-gono (plano o alabeado) \(A_1A_2\dots A_n\) conociendo los baricentros \(G_i\) de los triángulos \(A_iA_{i+1}A_{i+2}\) (índices módulo \(n\)).</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>En a) y b), cada vértice se obtiene del anterior por una simetría. Al dar la vuelta completa, \(A_1\) tiene que ser un punto fijo de la composición.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p><strong>a)</strong> Si \(M_i\) es el punto medio de \(A_iA_{i+1}\), entonces \(A_{i+1}=2M_i-A_i\) es el simétrico de \(A_i\) respecto de \(M_i\). Dando la vuelta, \(A_1\) es punto fijo de la composición de las \(n\) simetrías centrales:
+          \[ A_{n+1}=2\big(M_n-M_{n-1}+\dots+(-1)^{n-1}M_1\big)+(-1)^nA_1 . \]
+          • <strong>\(n\) impar:</strong> la composición es una simetría central y hay una única solución, \(A_1=M_1-M_2+M_3-\dots+M_n\).<br/>
+          • <strong>\(n\) par:</strong> la composición es una traslación. Si \(M_1+M_3+\dots=M_2+M_4+\dots\), es la identidad y hay infinitas soluciones (\(A_1\) arbitrario). Si no, no hay solución. Para \(n=4\) la condición dice que los puntos medios forman un paralelogramo (Varignon).<br/>
+          Todo se construye con regla y compás trazando simétricos.</p>
+<p><strong>b)</strong> Ahora \(A_{i+1}=\sigma_i(A_i)\), donde \(\sigma_i\) es la reflexión en la mediatriz \(m_i\), y \(A_1\) es punto fijo de \(F=\sigma_n\circ\dots\circ\sigma_1\). Para encontrarlo, tomamos dos puntos auxiliares \(X,Y\) y construimos \(F(X),F(Y)\).<br/>
+          • <strong>\(n\) par:</strong> \(F\) es directa. Si es un giro no trivial, su centro (intersección de las mediatrices de \(XF(X)\) e \(YF(Y)\)) es la única solución. Si es una traslación no nula, no hay solución; si es la identidad, cualquier punto sirve.<br/>
+          • <strong>\(n\) impar:</strong> \(F\) es inversa, una reflexión o una simetría con deslizamiento. Su eje pasa por los puntos medios de \(XF(X)\) e \(YF(Y)\). Si \(F\) es una reflexión, cualquier \(A_1\) del eje es solución; si hay deslizamiento, no hay solución. Para \(n=3\) las mediatrices concurren en un punto \(O\), \(F\) es una reflexión en una recta por \(O\), y se obtiene una familia de triángulos homotéticos desde \(O\).<br/>
+          (Si \(A_i\) cae sobre \(m_i\), el polígono degenera, con \(A_{i+1}=A_i\).)</p>
+<p><strong>c)</strong> Tenemos \(A_i+A_{i+1}+A_{i+2}=3G_i\). Restando dos ecuaciones consecutivas,
+          \[ A_{i+3}=A_i+3(G_{i+1}-G_i), \]
+          y sumando todas, \(\sum A_i=\sum G_i\).<br/>
+          • <strong>\(3\nmid n\):</strong> avanzando de a \(3\) se recorren todos los índices módulo \(n\). Así cada \(A_j\) queda como \(A_1+V_j\), con \(V_j\) un vector conocido; al cerrar la vuelta la suma telescópica da \(0\) y no hay contradicción. La condición \(\sum A_i=\sum G_i\) fija \(A_1=\frac1n\big(\sum G_i-\sum V_j\big)\). La solución es única, y es efectivamente solución: las diferencias muestran que \(3G_i-(A_i+A_{i+1}+A_{i+2})\) es una constante \(c\), y sumando, \(nc=0\).<br/>
+          • <strong>\(3\mid n\):</strong> los índices se parten en tres clases módulo \(3\). Para cerrar cada clase hace falta que las sumas de los \(G_j\) de las tres clases sean iguales (los tres «subbaricentros» coinciden). Si esto pasa, hay infinitas soluciones: se eligen \(A_1,A_2,A_3\) con \(A_1+A_2+A_3=3G_1\) y el resto queda determinado. Si no, no hay solución. Para \(n=3\) la condición es \(G_1=G_2=G_3\), lo que es obvio.<br/>
+          En el lenguaje del álgebra lineal, la matriz del sistema es circulante con autovalores \(1+\omega+\omega^2\), \(\omega^n=1\), que se anulan sólo cuando \(\omega\) es raíz cúbica primitiva de la unidad, es decir, cuando \(3\mid n\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="suma-de-distancias-a-los-lados.html">← N.º 31: Suma de distancias a los lados</a><a class="sig" href="nudo-pentagonal.html">N.º 33: El nudo pentagonal →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="suma-de-distancias-a-los-lados.html">N.º 31 · Suma de distancias a los lados</a> <span class="dif">★★</span></li><li><a href="nudo-pentagonal.html">N.º 33 · El nudo pentagonal</a> <span class="dif">★★</span></li><li><a href="teorema-de-descartes-cuatro-circulos.html">N.º 30 · Cuatro círculos tangentes</a> <span class="dif">★★★</span></li><li><a href="ortocentro-incentro-baricentro.html">N.º 34 · Ortocentro, incentro y baricentro</a> <span class="dif">★★★</span></li><li><a href="triangulo-20-80-80.html">N.º 29 · Un triángulo de 20°, 80° y 80°</a> <span class="dif">★★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

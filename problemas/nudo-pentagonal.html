@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El nudo de papel que forma un pentágono regular | Problemas Interesantes</title>
+<meta name="description" content="Si se hace un nudo con una tira de papel y se aplasta, queda un pentágono regular. Demostración geométrica con reflexiones, con figura y solución.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/nudo-pentagonal.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="El nudo de papel que forma un pentágono regular | Problemas Interesantes">
+<meta property="og:description" content="Si se hace un nudo con una tira de papel y se aplasta, queda un pentágono regular. Demostración geométrica con reflexiones, con figura y solución.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/nudo-pentagonal.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "El nudo de papel que forma un pentágono regular", "headline": "El nudo de papel que forma un pentágono regular", "description": "Si se hace un nudo con una tira de papel y se aplasta, queda un pentágono regular. Demostración geométrica con reflexiones, con figura y solución.", "url": "https://problemas-interesantes.github.io/problemas/nudo-pentagonal.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Reflexiones"}], "keywords": "Geometría, Reflexiones, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "El nudo de papel que forma un pentágono regular"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 33</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 33</span>
+<h1 class="ptitle">El nudo pentagonal</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><a class="tag" href="../temas/reflexiones.html">Reflexiones</a></div>
+<p>Tomamos una tira de papel de ancho constante, le hacemos un nudo simple (el primer paso de atarse los cordones) y lo «aplastamos» con cuidado tirando de los extremos hasta que quede chato.</p>
+<p>a) Demostrar que el nudo chato es un pentágono regular.</p>
+<p>b) Si antes de aplastar el nudo se pasa el comienzo de la tira por debajo y hacia la derecha, se obtiene un heptágono regular.</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Cada tramo de la tira es una banda entre dos rectas paralelas a distancia constante, y cada pliegue es una reflexión.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Llamemos \(ABCDE\) al pentágono y \(w\) al ancho de la tira. Mirando el nudo aplastado, la tira recorre cinco tramos rectos. Cada tramo es una banda limitada por dos rectas paralelas (los bordes de la tira) que pasan por vértices del pentágono: una contiene un lado y la otra la diagonal «opuesta». Por ejemplo, la banda sombreada tiene \(AB\parallel CE\). Los pliegues son los lados \(AB,\ BC,\ DE,\ EA\), y los dos extremos de la tira salen por el lado \(CD\).</p>
+<figure class="fig">
+<svg aria-label="Pentágono regular con una banda sombreada" role="img" style="max-width:260px" viewbox="0 0 220 200">
+<polygon class="band" points="110.0,20.0 186.1,75.3 157.0,164.7 33.9,75.3"></polygon>
+<polygon class="ln" points="110.0,20.0 186.1,75.3 157.0,164.7 63.0,164.7 33.9,75.3"></polygon>
+<line class="ln dash" x1="157.0" x2="33.9" y1="164.7" y2="75.3"></line>
+<text x="105.0" y="11.0">A</text>
+<text x="194.4" y="76.0">B</text>
+<text x="160.3" y="181.0">C</text>
+<text x="49.7" y="181.0">D</text>
+<text x="15.6" y="76.0">E</text>
+</svg>
+</figure>
+<p><strong>Ángulos iguales.</strong> Miremos el pliegue \(BC\), que une la banda \(AB\parallel CE\) con la banda \(CD\parallel BE\). Doblar es reflejar en la recta \(BC\), así que esa reflexión lleva la recta \(CE\) en la recta \(CD\). Por un lado, como \(AB\parallel CE\), \(\angle BCE=180^\circ-\angle ABC\) (ángulos conjugados). Por otro, como la reflexión lleva \(CE\) en \(CD\), con ambas del mismo lado de \(BC\), \(\angle BCD=180^\circ-\angle BCE\). Luego \(\angle BCD=\angle ABC\).<br/>
+          Cada pliegue iguala los ángulos de sus dos extremos. Los pliegues \(AB,BC,DE,EA\) dan \(\hat A=\hat B=\hat C\) y \(\hat D=\hat E=\hat A\), así que todos los ángulos valen \(108^\circ\).</p>
+<p><strong>Lados iguales.</strong> El ancho de cada banda se puede medir sobre cualquiera de los dos lados que la cortan. Por ejemplo, la banda \(AB\parallel CE\) está cortada por \(BC\) y \(EA\), que forman con sus bordes un ángulo de \(72^\circ\), así que \(w=BC\operatorname{sen}72^\circ=EA\operatorname{sen}72^\circ\). Las cinco bandas cortan, entre todas, los cinco lados, y entonces todos miden \(w/\operatorname{sen}72^\circ\). El pentágono es regular.</p>
+<p><strong>b)</strong> Con la vuelta extra, la tira recorre siete tramos. Cada uno vuelve a ser una banda de ancho \(w\) entre un lado del heptágono y una diagonal paralela, y cada pliegue es una reflexión. El mismo argumento muestra primero que los pliegues igualan todos los ángulos y después que el ancho constante iguala todos los lados.</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="reconstruir-un-poligono.html">← N.º 32: Reconstruir un polígono</a><a class="sig" href="ortocentro-incentro-baricentro.html">N.º 34: Ortocentro, incentro y baricentro →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="problema-de-fagnano.html">N.º 6 · El triángulo inscripto de perímetro mínimo</a> <span class="dif">★★</span></li><li><a href="reconstruir-un-poligono.html">N.º 32 · Reconstruir un polígono</a> <span class="dif">★★</span></li><li><a href="ortocentro-incentro-baricentro.html">N.º 34 · Ortocentro, incentro y baricentro</a> <span class="dif">★★★</span></li><li><a href="suma-de-distancias-a-los-lados.html">N.º 31 · Suma de distancias a los lados</a> <span class="dif">★★</span></li><li><a href="triangulos-semejantes-inscriptos.html">N.º 35 · Triángulos semejantes inscriptos</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>

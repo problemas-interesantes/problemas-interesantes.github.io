@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un determinante con senos que da sen(θ1+…+θn) | Problemas Interesantes</title>
+<meta name="description" content="Calcular un determinante n×n con senos y exponenciales complejas e^(±iθ): el resultado es el seno de una suma. Problema de álgebra lineal resuelto.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/determinante-que-da-un-seno.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Un determinante con senos que da sen(θ1+…+θn) | Problemas Interesantes">
+<meta property="og:description" content="Calcular un determinante n×n con senos y exponenciales complejas e^(±iθ): el resultado es el seno de una suma. Problema de álgebra lineal resuelto.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/determinante-que-da-un-seno.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Un determinante con senos que da sen(θ1+…+θn)", "headline": "Un determinante con senos que da sen(θ1+…+θn)", "description": "Calcular un determinante n×n con senos y exponenciales complejas e^(±iθ): el resultado es el seno de una suma. Problema de álgebra lineal resuelto.", "url": "https://problemas-interesantes.github.io/problemas/determinante-que-da-un-seno.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Álgebra lineal"}, {"@type": "Thing", "name": "Determinantes"}, {"@type": "Thing", "name": "Trigonometría"}], "keywords": "Álgebra lineal, Determinantes, Trigonometría, problema de matemática, problema resuelto", "dateModified": "2026-10-13", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Álgebra lineal", "item": "https://problemas-interesantes.github.io/temas/algebra-lineal.html"}, {"@type": "ListItem", "position": 3, "name": "Un determinante con senos que da sen(θ1+…+θn)"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/algebra-lineal.html">Álgebra lineal</a> › Problema N.º 26</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 26</span>
+<h1 class="ptitle">Un determinante que da un seno</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/algebra-lineal.html">Álgebra lineal</a><a class="tag" href="../temas/determinantes.html">Determinantes</a><a class="tag" href="../temas/trigonometria.html">Trigonometría</a></div>
+<p>Calcular el determinante \(n\times n\)
+      \[ \Delta_n=\begin{vmatrix}
+      \operatorname{sen}\theta_1 &amp; -e^{-i\theta_1} &amp; 0 &amp; \cdots &amp; 0 &amp; 0\\
+      \operatorname{sen}\theta_2 &amp; e^{i\theta_2} &amp; -e^{-i\theta_2} &amp; \cdots &amp; 0 &amp; 0\\
+      \operatorname{sen}\theta_3 &amp; 0 &amp; e^{i\theta_3} &amp; \cdots &amp; 0 &amp; 0\\
+      \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\\
+      \operatorname{sen}\theta_{n-1} &amp; 0 &amp; 0 &amp; \cdots &amp; e^{i\theta_{n-1}} &amp; -e^{-i\theta_{n-1}}\\
+      \operatorname{sen}\theta_n &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; e^{i\theta_n}
+      \end{vmatrix}. \]</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Escribí \(\operatorname{sen}\theta_j=\dfrac{e^{i\theta_j}-e^{-i\theta_j}}{2i}\) y restale a la primera columna la suma de las demás.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p><strong>Respuesta:</strong> \(\Delta_n=\operatorname{sen}(\theta_1+\theta_2+\dots+\theta_n)\).</p>
+<p>Reemplazamos \(\operatorname{sen}\theta_j=\frac{e^{i\theta_j}-e^{-i\theta_j}}{2i}\), sacamos el factor \(\frac1{2i}\) de la primera columna y le restamos la suma de las demás. En la fila \(1\) queda \(e^{i\theta_1}\); en las filas \(2,\dots,n-1\) queda \(0\); en la fila \(n\) queda \(-e^{-i\theta_n}\):
+          \[ \Delta_n=\frac{1}{2i}\begin{vmatrix}
+          e^{i\theta_1} &amp; -e^{-i\theta_1} &amp; 0 &amp; \cdots &amp; 0\\
+          0 &amp; e^{i\theta_2} &amp; -e^{-i\theta_2} &amp; \cdots &amp; 0\\
+          \vdots &amp; &amp; \ddots &amp; \ddots &amp; \vdots\\
+          0 &amp; 0 &amp; \cdots &amp; e^{i\theta_{n-1}} &amp; -e^{-i\theta_{n-1}}\\
+          -e^{-i\theta_n} &amp; 0 &amp; \cdots &amp; 0 &amp; e^{i\theta_n}
+          \end{vmatrix}. \]</p>
+<p>Desarrollando por la primera columna, los dos menores son triangulares: el primero tiene diagonal \(e^{i\theta_2},\dots,e^{i\theta_n}\) y el segundo \(-e^{-i\theta_1},\dots,-e^{-i\theta_{n-1}}\). Luego
+          \[ \Delta_n=\frac1{2i}\Big[e^{i\theta_1}e^{i(\theta_2+\dots+\theta_n)}+(-1)^{n+1}\big(-e^{-i\theta_n}\big)(-1)^{n-1}e^{-i(\theta_1+\dots+\theta_{n-1})}\Big]
+          =\frac{1}{2i}\Big[e^{i\sum\theta_j}-e^{-i\sum\theta_j}\Big], \]
+          que es \(\operatorname{sen}(\theta_1+\dots+\theta_n)\).</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="cadena-de-desigualdades.html">← N.º 25: Una cadena de desigualdades</a><a class="sig" href="promedios-de-1-sobre-1-mas-x.html">N.º 27: Promedios de \(\frac{1}{1+x}\) →</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="matriz-ceros-en-la-diagonal-y-unos.html">N.º 24 · Ceros en la diagonal, \(\pm1\) fuera de ella</a> <span class="dif">★★</span></li><li><a href="determinante-de-cauchy-y-de-hilbert.html">N.º 20 · Los determinantes de Cauchy y de Hilbert</a> <span class="dif">★★</span></li><li><a href="determinante-a-arriba-b-abajo.html">N.º 18 · Arriba \(a\), abajo \(b\)</a> <span class="dif">★★</span></li><li><a href="determinante-por-bloques.html">N.º 17 · Un determinante por bloques</a> <span class="dif">★</span></li><li><a href="teorema-de-descartes-cuatro-circulos.html">N.º 30 · Cuatro círculos tangentes</a> <span class="dif">★★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
