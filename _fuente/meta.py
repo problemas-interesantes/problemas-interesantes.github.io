@@ -111,4 +111,10 @@ META = {
  "p37": ("triangulos-de-contacto",
   "Área del triángulo de contacto del incírculo y del excírculo",
   "Probar que el área del triángulo es 2R/r veces la del triángulo de contacto del incírculo, y 2R/r_a la del excírculo. Problema de geometría resuelto."),
+ "p38": ("triangulo-de-area-un-septimo",
+  "Cevianas a un tercio: el triángulo de área 1/7",
+  "Las cevianas que cortan los lados a un tercio forman un triángulo de área 1/7 del original. Solución con Menelao y generalización: teorema de Routh."),
+ "p39": ("billar-circular-dos-rebotes",
+  "Billar circular: volver al punto de partida tras dos rebotes",
+  "¿En qué dirección lanzar una bola desde un punto interior de una mesa circular para que vuelva a pasar por él tras dos rebotes? Con figura y solución."),
 }
