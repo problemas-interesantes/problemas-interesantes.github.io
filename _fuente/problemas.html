@@ -1393,6 +1393,57 @@
         </div>
       </details>
     </article>
+    <article class="problem" id="p40">
+      <div class="problem-head">
+        <span class="num">N.º 40</span>
+        <h3>Incentros y baricentros de un cuadrilátero inscripto</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Geometría</span><span class="tag">Ángulos</span><span class="tag">Transformaciones</span></div>
+      <p>Se dan cuatro puntos \(A\), \(B\), \(C\), \(D\) sobre una circunferencia. Sean \(I_A\), \(I_B\), \(I_C\), \(I_D\) los incentros y \(G_A\), \(G_B\), \(G_C\), \(G_D\) los baricentros de los triángulos \(BCD\), \(CDA\), \(DAB\) y \(ABC\), respectivamente. Demostrar que:</p>
+      <p>a) \(I_A\), \(I_B\), \(I_C\), \(I_D\) son los vértices de un rectángulo;<br>
+      b) \(G_A\), \(G_B\), \(G_C\), \(G_D\) están sobre una circunferencia.</p>
+      <figure class="fig">
+<svg viewBox="0 0 300 230" style="max-width:340px" role="img" aria-label="Cuadrilátero ABCD inscripto en una circunferencia y el rectángulo formado por los incentros de los cuatro triángulos">
+<circle cx="150" cy="115" r="95" class="ln"/>
+<polygon points="200.7,89.6 130.9,74.1 122.6,111.8 192.4,127.2" class="band"/>
+<polygon points="60.7,147.5 227.8,169.5 232.3,67.5 109.9,28.9" class="ln"/>
+<line x1="60.7" y1="147.5" x2="232.3" y2="67.5" class="ln dash"/>
+<line x1="227.8" y1="169.5" x2="109.9" y2="28.9" class="ln dash"/>
+<text x="42.0" y="158.0">A</text>
+<text x="230.0" y="187.0">B</text>
+<text x="239.0" y="66.0">C</text>
+<text x="100.0" y="20.0">D</text>
+<text x="205.0" y="86.0" class="sm">I<tspan dy="3">A</tspan></text>
+<text x="118.0" y="68.0" class="sm">I<tspan dy="3">B</tspan></text>
+<text x="104.0" y="122.0" class="sm">I<tspan dy="3">C</tspan></text>
+<text x="196.0" y="140.0" class="sm">I<tspan dy="3">D</tspan></text>
+</svg>
+      </figure>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Para a): si \(M\) es el punto medio del arco \(AB\) que no contiene a \(C\), el incentro \(I\) del triángulo \(ABC\) está sobre \(CM\) y cumple \(MA=MB=MI\). Para b): escribí los baricentros como vectores con origen en el centro de la circunferencia.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Podemos suponer que los puntos están en el orden \(A,B,C,D\) sobre la circunferencia: el enunciado no habla de ningún orden, así que basta renombrarlos.</p>
+          <p><strong>Un lema.</strong> En un triángulo \(ABC\) inscripto, sea \(M\) el punto medio del arco \(AB\) que no contiene a \(C\), e \(I\) el incentro. Como \(CM\) es la bisectriz del ángulo \(C\), el punto \(I\) está sobre \(CM\). Además
+          \[ \angle MAI=\angle MAB+\angle BAI=\angle MCB+\tfrac{A}{2}=\tfrac{C}{2}+\tfrac{A}{2}, \]
+          y \(\angle MIA\), ángulo exterior del triángulo \(AIC\), vale \(\tfrac{A}{2}+\tfrac{C}{2}\). El triángulo \(MAI\) es isósceles: \(MI=MA\ (=MB)\).</p>
+          <p><strong>a)</strong> Sean \(M\), \(P\), \(N\), \(Q\) los puntos medios de los arcos \(AB\), \(BC\), \(CD\), \(DA\) que no contienen a los otros dos vértices. Sobre la circunferencia quedan en el orden \(A,M,B,P,C,N,D,Q\).</p>
+          <p>Los triángulos \(ABC\) y \(DAB\) comparten el lado \(AB\). Por el lema, \(I_D\) está en el segmento \(CM\), \(I_C\) en el segmento \(DM\), y \(MI_D=MA=MI_C\). Entonces el triángulo \(MI_CI_D\) es isósceles y \(I_CI_D\) es perpendicular a la bisectriz del ángulo \(I_CMI_D=\angle DMC\). Esa bisectriz pasa por el punto medio del arco \(CD\) que no contiene a \(M\), que es \(N\). Luego \(I_CI_D\perp MN\).</p>
+          <p>Del mismo modo, los triángulos \(BCD\) y \(CDA\) comparten \(CD\): \(I_A\in BN\), \(I_B\in AN\), \(NI_A=NI_B\), y la bisectriz del ángulo \(ANB\) pasa por \(M\). Luego \(I_AI_B\perp MN\). Con los lados \(BC\) y \(DA\) se obtiene igual que \(I_DI_A\perp PQ\) e \(I_BI_C\perp PQ\).</p>
+          <p>Por último, \(MN\perp PQ\): el ángulo entre dos cuerdas que se cortan es la semisuma de los arcos que abarcan, y
+          \[ \tfrac12\big(\widehat{MP}+\widehat{NQ}\big)=\tfrac12\cdot\tfrac12\big(\widehat{AB}+\widehat{BC}+\widehat{CD}+\widehat{DA}\big)=\tfrac12\cdot 180^\circ=90^\circ. \]
+          Así, los lados \(I_AI_B\) e \(I_CI_D\) son paralelos entre sí, \(I_BI_C\) e \(I_DI_A\) también, y los de una pareja son perpendiculares a los de la otra. Escribiendo \(I_B-I_A=s\,u\), \(I_D-I_C=t\,u\), \(I_C-I_B=p\,v\), \(I_A-I_D=q\,v\) con \(u\perp v\), la suma da \((s+t)u+(p+q)v=0\), o sea \(t=-s\) y \(q=-p\): \(I_B-I_A=I_C-I_D\). El cuadrilátero \(I_AI_BI_CI_D\) es un paralelogramo con lados perpendiculares, es decir, un rectángulo.</p>
+          <p><strong>b)</strong> Tomemos el centro de la circunferencia como origen, sea \(R\) su radio y \(S=A+B+C+D\). Entonces
+          \[ G_A=\frac{B+C+D}{3}=\frac{S-A}{3}, \]
+          y lo mismo con los otros: \(G_X=h(X)\) para la transformación \(h(z)=\frac{S-z}{3}\), que es una homotecia de razón \(-\frac13\) (y centro \(\frac S4\)). Una homotecia lleva circunferencias en circunferencias: \(G_A,G_B,G_C,G_D\) están en la circunferencia de centro \(\frac S3\) y radio \(\frac R3\).</p>
+          <p><em>Comentarios:</em> en b) no se usa nada del orden de los puntos; de hecho \(G_AG_BG_CG_D\) es semejante a \(ABCD\). La parte a) es el llamado <em>teorema japonés</em> para cuadriláteros, que aparece en tablillas votivas (<em>sangaku</em>) de alrededor de 1800. <em>Para seguir pensando:</em> si un polígono inscripto en una circunferencia se divide en triángulos con diagonales que no se cortan, la suma de los radios de las circunferencias inscriptas en esos triángulos no depende de la triangulación elegida. ¿Cómo se deduce esto de a)?</p>
+        </div>
+      </details>
+    </article>
   </section>
 
   <section id="acerca" class="about">
