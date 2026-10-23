@@ -117,4 +117,7 @@ META = {
  "p39": ("billar-circular-dos-rebotes",
   "Billar circular: volver al punto de partida tras dos rebotes",
   "¿En qué dirección lanzar una bola desde un punto interior de una mesa circular para que vuelva a pasar por él tras dos rebotes? Con figura y solución."),
+ "p40": ("incentros-de-un-cuadrilatero-inscripto",
+  "Incentros y baricentros de un cuadrilátero inscripto",
+  "Los incentros de los cuatro triángulos de un cuadrilátero cíclico forman un rectángulo (teorema japonés) y los baricentros son concíclicos. Con solución."),
 }
