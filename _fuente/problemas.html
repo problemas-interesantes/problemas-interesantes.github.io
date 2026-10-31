@@ -1444,6 +1444,45 @@
         </div>
       </details>
     </article>
+    <!-- ===================== 41 ===================== -->
+    <article class="problem" id="p41">
+      <div class="problem-head">
+        <span class="num">N.º 41</span>
+        <h3>Desigualdad entre la media aritmética y la media armónica</h3>
+        <span class="dif" title="Dificultad">★</span>
+      </div>
+      <div class="tags"><span class="tag">Desigualdades</span><span class="tag">Desigualdad de las medias</span><span class="tag">Polinomios</span></div>
+      <p>a) Descomponer en un producto de dos factores la expresión
+      \[ 3xyz + x(y^2+z^2) + y(z^2+x^2) + z(x^2+y^2). \]
+      Usar la identidad obtenida para probar que
+      \[ (x+y+z)(xy+yz+zx)\ \ge\ 9xyz \qquad \text{si } x&gt;0,\ y&gt;0,\ z&gt;0. \]
+      ¿En qué caso vale la igualdad?</p>
+      <p>b) Tres números positivos \(x\), \(y\), \(z\) varían conservando su suma constante. ¿Para qué valores de \(x\), \(y\), \(z\) es mínima la expresión \(\dfrac1x+\dfrac1y+\dfrac1z\)?</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Para a): agrupá los términos según las potencias de \(x\); la expresión es simétrica, así que un factor natural es \(x+y+z\). Después, a la diferencia con \(9xyz\) tratá de escribirla como una suma de términos que no pueden ser negativos. Para b): escribí \(\frac1x+\frac1y+\frac1z\) con denominador común.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p><strong>a)</strong> Desarrollando,
+          \[ (x+y+z)(xy+yz+zx)=x^2y+x^2z+xy^2+y^2z+xz^2+yz^2+3xyz, \]
+          que son exactamente los términos de la expresión dada. Entonces
+          \[ 3xyz + x(y^2+z^2) + y(z^2+x^2) + z(x^2+y^2)=(x+y+z)(xy+yz+zx). \]
+          Usando esta identidad,
+          \[ (x+y+z)(xy+yz+zx)-9xyz = x(y^2+z^2)+y(z^2+x^2)+z(x^2+y^2)-6xyz, \]
+          y como \(y^2+z^2-2yz=(y-z)^2\), etc., queda
+          \[ (x+y+z)(xy+yz+zx)-9xyz = x(y-z)^2+y(z-x)^2+z(x-y)^2. \]
+          Con \(x,y,z&gt;0\), cada sumando es \(\ge 0\), lo que prueba la desigualdad. La igualdad vale si y sólo si los tres sumandos son nulos, es decir, si y sólo si \(x=y=z\).</p>
+          <p><strong>b)</strong> Sea \(S=x+y+z\), fija. Por a),
+          \[ \frac1x+\frac1y+\frac1z=\frac{xy+yz+zx}{xyz}\ \ge\ \frac{9}{x+y+z}=\frac9S, \]
+          con igualdad si y sólo si \(x=y=z\). Por lo tanto la expresión es mínima cuando \(x=y=z=\frac S3\), y su valor mínimo es \(\frac9S\). En cambio no tiene máximo: si uno de los números tiende a \(0\) (y los otros dos se ajustan para mantener la suma), la expresión crece sin límite.</p>
+          <p><em>Comentario:</em> la desigualdad de b) dice que la media armónica de tres números positivos, \(\dfrac{3}{\frac1x+\frac1y+\frac1z}\), no supera a su media aritmética \(\dfrac{x+y+z}{3}\). <em>Para seguir pensando:</em> probar que para \(x_1,\dots,x_n&gt;0\)
+          \[ (x_1+\dots+x_n)\Big(\frac1{x_1}+\dots+\frac1{x_n}\Big)\ \ge\ n^2, \]
+          con igualdad sólo si todos los \(x_i\) son iguales. (Una forma: desarrollar el producto y agrupar los términos \(\frac{x_i}{x_j}+\frac{x_j}{x_i}\).)</p>
+        </div>
+      </details>
+    </article>
   </section>
 
   <section id="acerca" class="about">

@@ -120,4 +120,7 @@ META = {
  "p40": ("incentros-de-un-cuadrilatero-inscripto",
   "Teorema japonés: los incentros de un cuadrilátero inscripto forman un rectángulo",
   "Los incentros de los cuatro triángulos de un cuadrilátero cíclico forman un rectángulo (teorema japonés) y los baricentros son concíclicos. Con solución."),
+ "p41": ("desigualdad-media-aritmetica-y-armonica",
+  "Desigualdad entre la media aritmética y la media armónica",
+  "Factorizar una expresión simétrica para probar (x+y+z)(xy+yz+zx) ≥ 9xyz y minimizar 1/x+1/y+1/z con suma fija. Desigualdad de las medias, resuelto."),
 }
