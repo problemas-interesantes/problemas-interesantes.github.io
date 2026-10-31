@@ -123,4 +123,7 @@ META = {
  "p41": ("desigualdad-media-aritmetica-y-armonica",
   "Desigualdad entre la media aritmética y la media armónica",
   "Factorizar una expresión simétrica para probar (x+y+z)(xy+yz+zx) ≥ 9xyz y minimizar 1/x+1/y+1/z con suma fija. Desigualdad de las medias, resuelto."),
+ "p42": ("area-y-producto-de-los-lados",
+  "Una versión más fuerte de la desigualdad de Weitzenböck: área y producto de los lados",
+  "Probar que abc ≥ 8Δ^(3/2)/3^(3/4) en todo triángulo: el equilátero tiene área máxima con producto de lados fijo. Implica Weitzenböck. Con solución."),
 }

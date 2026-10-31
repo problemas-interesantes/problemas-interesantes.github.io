@@ -1483,6 +1483,35 @@
         </div>
       </details>
     </article>
+    <!-- ===================== 42 ===================== -->
+    <article class="problem" id="p42">
+      <div class="problem-head">
+        <span class="num">N.º 42</span>
+        <h3>Área y producto de los lados de un triángulo</h3>
+        <span class="dif" title="Dificultad">★★</span>
+      </div>
+      <div class="tags"><span class="tag">Geometría</span><span class="tag">Desigualdades</span><span class="tag">Trigonometría</span></div>
+      <p>Probar que en cualquier triángulo de lados \(a\), \(b\), \(c\) y área \(\Delta\)
+      \[ abc\ \ge\ \frac{8\,\Delta^{3/2}}{3^{3/4}}, \]
+      con igualdad si y sólo si el triángulo es equilátero.</p>
+      <details class="hint">
+        <summary>Pista</summary>
+        <div class="answer"><p>Escribí el área de tres maneras: \(\Delta=\tfrac12 ab\operatorname{sen}C=\tfrac12 bc\operatorname{sen}A=\tfrac12 ca\operatorname{sen}B\), y multiplicalas.</p></div>
+      </details>
+      <details>
+        <summary>Ver solución</summary>
+        <div class="answer">
+          <p>Multiplicando las tres expresiones del área,
+          \[ \Delta^3=\tfrac18\,(abc)^2\operatorname{sen}A\operatorname{sen}B\operatorname{sen}C. \]
+          Elevando al cuadrado la desigualdad buscada, ésta equivale a \((abc)^2\ge \dfrac{64\,\Delta^3}{3\sqrt3}\), y sustituyendo \(\Delta^3\), a
+          \[ \operatorname{sen}A\operatorname{sen}B\operatorname{sen}C\ \le\ \frac{3\sqrt3}{8}. \]
+          Los tres senos son positivos. Por la desigualdad entre las medias geométrica y aritmética, y luego porque \(\operatorname{sen}\) es cóncava en \([0,\pi]\) (desigualdad de Jensen),
+          \[ \operatorname{sen}A\operatorname{sen}B\operatorname{sen}C\le\Big(\frac{\operatorname{sen}A+\operatorname{sen}B+\operatorname{sen}C}{3}\Big)^3\le\operatorname{sen}^3\Big(\frac{A+B+C}{3}\Big)=\operatorname{sen}^3 60^\circ=\frac{3\sqrt3}{8}. \]
+          En la primera desigualdad hay igualdad si y sólo si los tres senos son iguales, y en la segunda (por la concavidad estricta) si y sólo si \(A=B=C\). Así, la igualdad vale exactamente para el triángulo equilátero.</p>
+          <p><em>Comentario:</em> elevando a \(\tfrac23\), la desigualdad se escribe \(\Delta\le\dfrac{\sqrt3}{4}\,(abc)^{2/3}\): entre todos los triángulos con el mismo producto de lados, el equilátero es el de mayor área. <em>Para seguir pensando:</em> deducir de aquí la <em>desigualdad de Weitzenböck</em>, \(a^2+b^2+c^2\ge 4\sqrt3\,\Delta\). (Pista: comparar \(a^2+b^2+c^2\) con \((abc)^{2/3}\).)</p>
+        </div>
+      </details>
+    </article>
   </section>
 
   <section id="acerca" class="about">

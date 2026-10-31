@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una versión más fuerte de la desigualdad de Weitzenböck: área y producto de los lados | Problemas Interesantes</title>
+<meta name="description" content="Probar que abc ≥ 8Δ^(3/2)/3^(3/4) en todo triángulo: el equilátero tiene área máxima con producto de lados fijo. Implica Weitzenböck. Con solución.">
+<link rel="canonical" href="https://problemas-interesantes.github.io/problemas/area-y-producto-de-los-lados.html">
+<meta property="og:site_name" content="Problemas Interesantes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Una versión más fuerte de la desigualdad de Weitzenböck: área y producto de los lados | Problemas Interesantes">
+<meta property="og:description" content="Probar que abc ≥ 8Δ^(3/2)/3^(3/4) en todo triángulo: el equilátero tiene área máxima con producto de lados fijo. Implica Weitzenböck. Con solución.">
+<meta property="og:url" content="https://problemas-interesantes.github.io/problemas/area-y-producto-de-los-lados.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea'] }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LearningResource", "name": "Una versión más fuerte de la desigualdad de Weitzenböck: área y producto de los lados", "headline": "Una versión más fuerte de la desigualdad de Weitzenböck: área y producto de los lados", "description": "Probar que abc ≥ 8Δ^(3/2)/3^(3/4) en todo triángulo: el equilátero tiene área máxima con producto de lados fijo. Implica Weitzenböck. Con solución.", "url": "https://problemas-interesantes.github.io/problemas/area-y-producto-de-los-lados.html", "inLanguage": "es", "isAccessibleForFree": true, "learningResourceType": "Problema resuelto", "educationalLevel": "pide una idea", "about": [{"@type": "Thing", "name": "Geometría"}, {"@type": "Thing", "name": "Desigualdades"}, {"@type": "Thing", "name": "Trigonometría"}], "keywords": "Geometría, Desigualdades, Trigonometría, problema de matemática, problema resuelto", "dateModified": "2026-10-30", "isPartOf": {"@type": "WebSite", "name": "Problemas Interesantes", "url": "https://problemas-interesantes.github.io/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Problemas Interesantes", "item": "https://problemas-interesantes.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Geometría", "item": "https://problemas-interesantes.github.io/temas/geometria.html"}, {"@type": "ListItem", "position": 3, "name": "Una versión más fuerte de la desigualdad de Weitzenböck: área y producto de los lados"}]}</script>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="marca" href="../">Problemas Interesantes</a>
+  <nav>
+    <a href="../#indice">Índice</a>
+    <a href="../temas/">Temas</a>
+    <a href="../#acerca">Acerca</a>
+    <a href="../#contacto">Contacto</a>
+  </nav>
+</div></div>
+<div class="wrap">
+  <p class="migas"><a href="../">Inicio</a> › <a href="../temas/geometria.html">Geometría</a> › Problema N.º 42</p>
+  <article class="problem" id="problema">
+<div class="problem-head">
+<span class="num">N.º 42</span>
+<h1 class="ptitle">Área y producto de los lados de un triángulo</h1>
+<span class="dif" title="Dificultad">★★</span>
+</div>
+<div class="tags"><a class="tag" href="../temas/geometria.html">Geometría</a><a class="tag" href="../temas/desigualdades.html">Desigualdades</a><a class="tag" href="../temas/trigonometria.html">Trigonometría</a></div>
+<p>Probar que en cualquier triángulo de lados \(a\), \(b\), \(c\) y área \(\Delta\)
+      \[ abc\ \ge\ \frac{8\,\Delta^{3/2}}{3^{3/4}}, \]
+      con igualdad si y sólo si el triángulo es equilátero.</p>
+<details class="hint">
+<summary>Pista</summary>
+<div class="answer"><p>Escribí el área de tres maneras: \(\Delta=\tfrac12 ab\operatorname{sen}C=\tfrac12 bc\operatorname{sen}A=\tfrac12 ca\operatorname{sen}B\), y multiplicalas.</p></div>
+</details>
+<details>
+<summary>Ver solución</summary>
+<div class="answer">
+<p>Multiplicando las tres expresiones del área,
+          \[ \Delta^3=\tfrac18\,(abc)^2\operatorname{sen}A\operatorname{sen}B\operatorname{sen}C. \]
+          Elevando al cuadrado la desigualdad buscada, ésta equivale a \((abc)^2\ge \dfrac{64\,\Delta^3}{3\sqrt3}\), y sustituyendo \(\Delta^3\), a
+          \[ \operatorname{sen}A\operatorname{sen}B\operatorname{sen}C\ \le\ \frac{3\sqrt3}{8}. \]
+          Los tres senos son positivos. Por la desigualdad entre las medias geométrica y aritmética, y luego porque \(\operatorname{sen}\) es cóncava en \([0,\pi]\) (desigualdad de Jensen),
+          \[ \operatorname{sen}A\operatorname{sen}B\operatorname{sen}C\le\Big(\frac{\operatorname{sen}A+\operatorname{sen}B+\operatorname{sen}C}{3}\Big)^3\le\operatorname{sen}^3\Big(\frac{A+B+C}{3}\Big)=\operatorname{sen}^3 60^\circ=\frac{3\sqrt3}{8}. \]
+          En la primera desigualdad hay igualdad si y sólo si los tres senos son iguales, y en la segunda (por la concavidad estricta) si y sólo si \(A=B=C\). Así, la igualdad vale exactamente para el triángulo equilátero.</p>
+<p><em>Comentario:</em> elevando a \(\tfrac23\), la desigualdad se escribe \(\Delta\le\dfrac{\sqrt3}{4}\,(abc)^{2/3}\): entre todos los triángulos con el mismo producto de lados, el equilátero es el de mayor área. <em>Para seguir pensando:</em> deducir de aquí la <em>desigualdad de Weitzenböck</em>, \(a^2+b^2+c^2\ge 4\sqrt3\,\Delta\). (Pista: comparar \(a^2+b^2+c^2\) con \((abc)^{2/3}\).)</p>
+</div>
+</details>
+</article>
+  <nav class="pasos" aria-label="Otros problemas"><a href="desigualdad-media-aritmetica-y-armonica.html">← N.º 41: Desigualdad entre la media aritmética y la media armónica</a></nav>
+  <section class="relacionados"><h2>Problemas relacionados</h2><ul><li><a href="billar-circular-dos-rebotes.html">N.º 39 · Billar circular</a> <span class="dif">★★</span></li><li><a href="triangulos-de-contacto.html">N.º 37 · Los triángulos de contacto</a> <span class="dif">★★</span></li><li><a href="teorema-de-descartes-cuatro-circulos.html">N.º 30 · Cuatro círculos tangentes</a> <span class="dif">★★★</span></li><li><a href="desigualdad-media-aritmetica-y-armonica.html">N.º 41 · Desigualdad entre la media aritmética y la media armónica</a> <span class="dif">★</span></li><li><a href="incentros-de-un-cuadrilatero-inscripto.html">N.º 40 · Incentros y baricentros de un cuadrilátero inscripto</a> <span class="dif">★★</span></li></ul></section>
+  <footer>
+    Problemas Interesantes · Problemas de matemática con pista y solución ·
+    <a href="mailto:problemasinteresantes@gmail.com" style="color:inherit">problemasinteresantes@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
